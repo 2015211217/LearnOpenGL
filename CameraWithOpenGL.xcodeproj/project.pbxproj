@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C89848713F80BA11505E1B0 /* libPods-CameraWithOpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */; };
+		994636EF21BE3C3A004463D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636EE21BE3C3A004463D0 /* AppDelegate.m */; };
+		994636F221BE3C3A004463D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636F121BE3C3A004463D0 /* ViewController.m */; };
+		994636F521BE3C3A004463D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994636F321BE3C3A004463D0 /* Main.storyboard */; };
+		994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 994636F621BE3C3B004463D0 /* Assets.xcassets */; };
+		994636FA21BE3C3B004463D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */; };
+		994636FD21BE3C3B004463D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636FC21BE3C3B004463D0 /* main.m */; };
+		9946371521BE3C85004463D0 /* MGCameraRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946370D21BE3C85004463D0 /* MGCameraRecordManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9946371621BE3C85004463D0 /* MGCameraManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9946370E21BE3C85004463D0 /* MGCameraManager.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9946371721BE3C85004463D0 /* MGCameraDeviceSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946371021BE3C85004463D0 /* MGCameraDeviceSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9946371821BE3C85004463D0 /* MGCameraImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9946371121BE3C85004463D0 /* MGCameraImage.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9946371B21BE418A004463D0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9946371A21BE418A004463D0 /* GLKit.framework */; };
+		9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946371D21BE6A05004463D0 /* SimplePictureViewController.m */; };
+		9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372021BE6A12004463D0 /* MultiPictureViewController.m */; };
+		9946372421BE6A20004463D0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372321BE6A20004463D0 /* CameraViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D62A4719E598A749DDC1D42 /* Pods-CameraWithOpenGL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraWithOpenGL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraWithOpenGL/Pods-CameraWithOpenGL.debug.xcconfig"; sourceTree = "<group>"; };
+		523A2AFC366786DD5792E787 /* Pods-CameraWithOpenGL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraWithOpenGL.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraWithOpenGL/Pods-CameraWithOpenGL.release.xcconfig"; sourceTree = "<group>"; };
+		67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CameraWithOpenGL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		994636EA21BE3C3A004463D0 /* CameraWithOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraWithOpenGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		994636ED21BE3C3A004463D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		994636EE21BE3C3A004463D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		994636F021BE3C3A004463D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		994636F121BE3C3A004463D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		994636F421BE3C3A004463D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		994636F621BE3C3B004463D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		994636F921BE3C3B004463D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		994636FB21BE3C3B004463D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		994636FC21BE3C3B004463D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9946370621BE3C85004463D0 /* MGCameraConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraConfig.h; sourceTree = "<group>"; };
+		9946370821BE3C85004463D0 /* MGCameraRecordDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraRecordDelegate.h; sourceTree = "<group>"; };
+		9946370921BE3C85004463D0 /* MGCameraDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraDelegate.h; sourceTree = "<group>"; };
+		9946370B21BE3C85004463D0 /* MGCameraRecordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraRecordManager.h; sourceTree = "<group>"; };
+		9946370C21BE3C85004463D0 /* MGCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraManager.h; sourceTree = "<group>"; };
+		9946370D21BE3C85004463D0 /* MGCameraRecordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCameraRecordManager.m; sourceTree = "<group>"; };
+		9946370E21BE3C85004463D0 /* MGCameraManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MGCameraManager.mm; sourceTree = "<group>"; };
+		9946371021BE3C85004463D0 /* MGCameraDeviceSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGCameraDeviceSupport.m; sourceTree = "<group>"; };
+		9946371121BE3C85004463D0 /* MGCameraImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MGCameraImage.mm; sourceTree = "<group>"; };
+		9946371221BE3C85004463D0 /* MGCameraImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraImage.h; sourceTree = "<group>"; };
+		9946371321BE3C85004463D0 /* MGCameraDeviceSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraDeviceSupport.h; sourceTree = "<group>"; };
+		9946371421BE3C85004463D0 /* MGCameraKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGCameraKit.h; sourceTree = "<group>"; };
+		9946371A21BE418A004463D0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9946371C21BE6A05004463D0 /* SimplePictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimplePictureViewController.h; sourceTree = "<group>"; };
+		9946371D21BE6A05004463D0 /* SimplePictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimplePictureViewController.m; sourceTree = "<group>"; };
+		9946371F21BE6A12004463D0 /* MultiPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiPictureViewController.h; sourceTree = "<group>"; };
+		9946372021BE6A12004463D0 /* MultiPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiPictureViewController.m; sourceTree = "<group>"; };
+		9946372221BE6A20004463D0 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		9946372321BE6A20004463D0 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		994636E721BE3C3A004463D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9946371B21BE418A004463D0 /* GLKit.framework in Frameworks */,
+				7C89848713F80BA11505E1B0 /* libPods-CameraWithOpenGL.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		954506C7FB73F1B169E4579C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D62A4719E598A749DDC1D42 /* Pods-CameraWithOpenGL.debug.xcconfig */,
+				523A2AFC366786DD5792E787 /* Pods-CameraWithOpenGL.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		994636E121BE3C39004463D0 = {
+			isa = PBXGroup;
+			children = (
+				9946370321BE3C85004463D0 /* MGCameraKit */,
+				994636EC21BE3C3A004463D0 /* CameraWithOpenGL */,
+				994636EB21BE3C3A004463D0 /* Products */,
+				9946371921BE418A004463D0 /* Frameworks */,
+				954506C7FB73F1B169E4579C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		994636EB21BE3C3A004463D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				994636EA21BE3C3A004463D0 /* CameraWithOpenGL.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		994636EC21BE3C3A004463D0 /* CameraWithOpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				994636ED21BE3C3A004463D0 /* AppDelegate.h */,
+				994636EE21BE3C3A004463D0 /* AppDelegate.m */,
+				994636F021BE3C3A004463D0 /* ViewController.h */,
+				994636F121BE3C3A004463D0 /* ViewController.m */,
+				994636F321BE3C3A004463D0 /* Main.storyboard */,
+				994636F621BE3C3B004463D0 /* Assets.xcassets */,
+				994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */,
+				994636FB21BE3C3B004463D0 /* Info.plist */,
+				994636FC21BE3C3B004463D0 /* main.m */,
+				9946371C21BE6A05004463D0 /* SimplePictureViewController.h */,
+				9946371D21BE6A05004463D0 /* SimplePictureViewController.m */,
+				9946371F21BE6A12004463D0 /* MultiPictureViewController.h */,
+				9946372021BE6A12004463D0 /* MultiPictureViewController.m */,
+				9946372221BE6A20004463D0 /* CameraViewController.h */,
+				9946372321BE6A20004463D0 /* CameraViewController.m */,
+			);
+			path = CameraWithOpenGL;
+			sourceTree = "<group>";
+		};
+		9946370321BE3C85004463D0 /* MGCameraKit */ = {
+			isa = PBXGroup;
+			children = (
+				9946370421BE3C85004463D0 /* MGCameraKitClass */,
+			);
+			path = MGCameraKit;
+			sourceTree = "<group>";
+		};
+		9946370421BE3C85004463D0 /* MGCameraKitClass */ = {
+			isa = PBXGroup;
+			children = (
+				9946370521BE3C85004463D0 /* Config */,
+				9946370721BE3C85004463D0 /* Delegate */,
+				9946370A21BE3C85004463D0 /* Manager */,
+				9946370F21BE3C85004463D0 /* Common */,
+				9946371421BE3C85004463D0 /* MGCameraKit.h */,
+			);
+			path = MGCameraKitClass;
+			sourceTree = "<group>";
+		};
+		9946370521BE3C85004463D0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9946370621BE3C85004463D0 /* MGCameraConfig.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9946370721BE3C85004463D0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9946370821BE3C85004463D0 /* MGCameraRecordDelegate.h */,
+				9946370921BE3C85004463D0 /* MGCameraDelegate.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		9946370A21BE3C85004463D0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9946370B21BE3C85004463D0 /* MGCameraRecordManager.h */,
+				9946370C21BE3C85004463D0 /* MGCameraManager.h */,
+				9946370D21BE3C85004463D0 /* MGCameraRecordManager.m */,
+				9946370E21BE3C85004463D0 /* MGCameraManager.mm */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9946370F21BE3C85004463D0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9946371021BE3C85004463D0 /* MGCameraDeviceSupport.m */,
+				9946371121BE3C85004463D0 /* MGCameraImage.mm */,
+				9946371221BE3C85004463D0 /* MGCameraImage.h */,
+				9946371321BE3C85004463D0 /* MGCameraDeviceSupport.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9946371921BE418A004463D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9946371A21BE418A004463D0 /* GLKit.framework */,
+				67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		994636E921BE3C3A004463D0 /* CameraWithOpenGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9946370021BE3C3B004463D0 /* Build configuration list for PBXNativeTarget "CameraWithOpenGL" */;
+			buildPhases = (
+				8ABEE2A9731BC5AF9CE36D56 /* [CP] Check Pods Manifest.lock */,
+				994636E621BE3C3A004463D0 /* Sources */,
+				994636E721BE3C3A004463D0 /* Frameworks */,
+				994636E821BE3C3A004463D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraWithOpenGL;
+			productName = CameraWithOpenGL;
+			productReference = 994636EA21BE3C3A004463D0 /* CameraWithOpenGL.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		994636E221BE3C39004463D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = JiangXuanke;
+				TargetAttributes = {
+					994636E921BE3C3A004463D0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 994636E521BE3C39004463D0 /* Build configuration list for PBXProject "CameraWithOpenGL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 994636E121BE3C39004463D0;
+			productRefGroup = 994636EB21BE3C3A004463D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				994636E921BE3C3A004463D0 /* CameraWithOpenGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		994636E821BE3C3A004463D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994636FA21BE3C3B004463D0 /* LaunchScreen.storyboard in Resources */,
+				994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */,
+				994636F521BE3C3A004463D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8ABEE2A9731BC5AF9CE36D56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CameraWithOpenGL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		994636E621BE3C3A004463D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9946371721BE3C85004463D0 /* MGCameraDeviceSupport.m in Sources */,
+				994636F221BE3C3A004463D0 /* ViewController.m in Sources */,
+				9946371521BE3C85004463D0 /* MGCameraRecordManager.m in Sources */,
+				994636FD21BE3C3B004463D0 /* main.m in Sources */,
+				9946371621BE3C85004463D0 /* MGCameraManager.mm in Sources */,
+				9946372421BE6A20004463D0 /* CameraViewController.m in Sources */,
+				9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */,
+				9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */,
+				9946371821BE3C85004463D0 /* MGCameraImage.mm in Sources */,
+				994636EF21BE3C3A004463D0 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		994636F321BE3C3A004463D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				994636F421BE3C3A004463D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				994636F921BE3C3B004463D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		994636FE21BE3C3B004463D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		994636FF21BE3C3B004463D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9946370121BE3C3B004463D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D62A4719E598A749DDC1D42 /* Pods-CameraWithOpenGL.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F4LXZEHY23;
+				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.megvii.CameraWithOpenGL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Megvii_wildcard;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9946370221BE3C3B004463D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 523A2AFC366786DD5792E787 /* Pods-CameraWithOpenGL.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.megvii.CameraWithOpenGL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		994636E521BE3C39004463D0 /* Build configuration list for PBXProject "CameraWithOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				994636FE21BE3C3B004463D0 /* Debug */,
+				994636FF21BE3C3B004463D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9946370021BE3C3B004463D0 /* Build configuration list for PBXNativeTarget "CameraWithOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9946370121BE3C3B004463D0 /* Debug */,
+				9946370221BE3C3B004463D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 994636E221BE3C39004463D0 /* Project object */;
+}
