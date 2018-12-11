@@ -22,6 +22,7 @@
 		9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946371D21BE6A05004463D0 /* SimplePictureViewController.m */; };
 		9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372021BE6A12004463D0 /* MultiPictureViewController.m */; };
 		9946372421BE6A20004463D0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372321BE6A20004463D0 /* CameraViewController.m */; };
+		99C98E6C21BF6ED7002909CA /* doge.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E6B21BF6ED7002909CA /* doge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		9946372021BE6A12004463D0 /* MultiPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiPictureViewController.m; sourceTree = "<group>"; };
 		9946372221BE6A20004463D0 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		9946372321BE6A20004463D0 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		99C98E6B21BF6ED7002909CA /* doge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doge.png; path = ../../../../Desktop/doge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */,
 				994636FB21BE3C3B004463D0 /* Info.plist */,
 				994636FC21BE3C3B004463D0 /* main.m */,
+				99C98E6B21BF6ED7002909CA /* doge.png */,
 				9946371C21BE6A05004463D0 /* SimplePictureViewController.h */,
 				9946371D21BE6A05004463D0 /* SimplePictureViewController.m */,
 				9946371F21BE6A12004463D0 /* MultiPictureViewController.h */,
@@ -250,6 +253,7 @@
 			files = (
 				994636FA21BE3C3B004463D0 /* LaunchScreen.storyboard in Resources */,
 				994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */,
+				99C98E6C21BF6ED7002909CA /* doge.png in Resources */,
 				994636F521BE3C3A004463D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
