@@ -18,6 +18,7 @@
 @property (nonatomic, strong, readonly) AVCaptureDeviceInput *videoInput;
 @property (nonatomic, assign, readonly) AVCaptureDevicePosition devicePosition;
 
+
 - (dispatch_queue_t)getVideoQueue;
 
 /**

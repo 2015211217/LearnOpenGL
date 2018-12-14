@@ -22,7 +22,10 @@
 		9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946371D21BE6A05004463D0 /* SimplePictureViewController.m */; };
 		9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372021BE6A12004463D0 /* MultiPictureViewController.m */; };
 		9946372421BE6A20004463D0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372321BE6A20004463D0 /* CameraViewController.m */; };
-		99C98E6C21BF6ED7002909CA /* doge.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E6B21BF6ED7002909CA /* doge.png */; };
+		99C98E7A21BFA783002909CA /* doge.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7921BFA783002909CA /* doge.png */; };
+		99C98E7D21BFAC76002909CA /* aFei1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7621BFA756002909CA /* aFei1.png */; };
+		99C98E7E21BFAC76002909CA /* aFei2.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7721BFA758002909CA /* aFei2.png */; };
+		99C98E7F21BFAC76002909CA /* aFei3.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7821BFA75B002909CA /* aFei3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +61,10 @@
 		9946372021BE6A12004463D0 /* MultiPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiPictureViewController.m; sourceTree = "<group>"; };
 		9946372221BE6A20004463D0 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		9946372321BE6A20004463D0 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		99C98E6B21BF6ED7002909CA /* doge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doge.png; path = ../../../../Desktop/doge.png; sourceTree = "<group>"; };
+		99C98E7621BFA756002909CA /* aFei1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei1.png; sourceTree = "<group>"; };
+		99C98E7721BFA758002909CA /* aFei2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei2.png; sourceTree = "<group>"; };
+		99C98E7821BFA75B002909CA /* aFei3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei3.png; sourceTree = "<group>"; };
+		99C98E7921BFA783002909CA /* doge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 			children = (
 				9946370321BE3C85004463D0 /* MGCameraKit */,
 				994636EC21BE3C3A004463D0 /* CameraWithOpenGL */,
+				99C98E7321BFA73D002909CA /* Pictures */,
 				994636EB21BE3C3A004463D0 /* Products */,
 				9946371921BE418A004463D0 /* Frameworks */,
 				954506C7FB73F1B169E4579C /* Pods */,
@@ -114,7 +121,6 @@
 				994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */,
 				994636FB21BE3C3B004463D0 /* Info.plist */,
 				994636FC21BE3C3B004463D0 /* main.m */,
-				99C98E6B21BF6ED7002909CA /* doge.png */,
 				9946371C21BE6A05004463D0 /* SimplePictureViewController.h */,
 				9946371D21BE6A05004463D0 /* SimplePictureViewController.m */,
 				9946371F21BE6A12004463D0 /* MultiPictureViewController.h */,
@@ -193,6 +199,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		99C98E7321BFA73D002909CA /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				99C98E7921BFA783002909CA /* doge.png */,
+				99C98E7621BFA756002909CA /* aFei1.png */,
+				99C98E7721BFA758002909CA /* aFei2.png */,
+				99C98E7821BFA75B002909CA /* aFei3.png */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +268,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C98E7D21BFAC76002909CA /* aFei1.png in Resources */,
+				99C98E7E21BFAC76002909CA /* aFei2.png in Resources */,
+				99C98E7F21BFAC76002909CA /* aFei3.png in Resources */,
 				994636FA21BE3C3B004463D0 /* LaunchScreen.storyboard in Resources */,
 				994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */,
-				99C98E6C21BF6ED7002909CA /* doge.png in Resources */,
+				99C98E7A21BFA783002909CA /* doge.png in Resources */,
 				994636F521BE3C3A004463D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +465,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F4LXZEHY23;
 				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +485,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

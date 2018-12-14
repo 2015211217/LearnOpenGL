@@ -116,6 +116,8 @@
         _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.videoSession];
         [_videoPreviewLayer setFrame:CGRectMake(0, 0, MG_WIN_WIDTH, MG_WIN_HEIGHT)];
         [_videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+        
+        
     }
     return _videoPreviewLayer;
 }
@@ -138,6 +140,7 @@
     }
     return NO;
 }
+
 
 #pragma mark - VideoOperation
 - (void)startRunning {

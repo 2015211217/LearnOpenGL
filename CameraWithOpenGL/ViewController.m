@@ -4,9 +4,7 @@
 //
 //  Created by JiangXuanke on 2018/12/10.
 //  Copyright © 2018 JiangXuanke. All rights reserved.
-//  怎么这些方法都被deprecated了呀,而且为什么只有我的报错了她的没有呀
 
-#define GLES_SILENCE_DEPRECATION
 #import "ViewController.h"
 #import "SimplePictureViewController.h"
 #import "MultiPictureViewController.h"
