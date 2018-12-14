@@ -9,6 +9,7 @@
 #import "CameraViewController.h"
 #import "MGCameraManager.h"
 #import "MGCameraImage.h"
+#import "GLProgram.h"
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
@@ -20,12 +21,21 @@
 @property (nonatomic, strong) MGCameraManager *cameraManager;
 @property (nonatomic, assign) int count;
 
+
+
 @end
 
 @implementation CameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 创建一个新的上下文🤔️
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(quitShootPreviews)];
+    self.navigationItem.leftBarButtonItem = btnItem;
     
     // new context
     _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
@@ -45,6 +55,17 @@
         0, 1, 2,
         2, 1, 3
     };
+    
+//    GLfloat squarePointsUpper[] = {
+//        0.3, 0.3, 0.0, 1.0f, 1.0f,
+//        0.3, -0.3, 0.0, 1.0f, 0.0f,
+//        -0.3, 0.3, 0.0, 0.0f, 1.0f,
+//        -0.3, -0.3, 0.0, 0.0f, 0.0f,
+//    };
+//    GLuint indicesUpper[] = {
+//        0, 1, 2,
+//        2, 1, 3
+//    };
     self.count = sizeof(indices) / sizeof(GLuint);
     
     // bind points
@@ -65,7 +86,7 @@
                           GL_FLOAT,
                           GL_FALSE,
                           sizeof(GLfloat) * 5,
-                          (GLfloat *)NULL + 0);
+                          NULL);
     
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0,
@@ -74,13 +95,15 @@
                           GL_FALSE,
                           sizeof(GLfloat) * 5, //
                           (GLfloat *)NULL + 3);// 3 ： 偏移量
+    
+    
     [self uploadTexture];
 }
 
 - (void)uploadTexture {
-    // 将摄像机的界面贴到上面
+    // 将摄像机的界面贴到上
     [self startCameraManager];
-   
+    
 }
 
 - (void)startCameraManager {
@@ -96,10 +119,8 @@
     }
 }
 
-// 等一下，仔细想一想，找到那个imageBuffer
-
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClearColor(0.3f, 0.6f, 1.0f, 1.0f);
+    glClearColor(0.3f, 0.6f, 1.0f, 0.5f);
     glClear(GL_DEPTH_BUFFER_BIT); // 清除深度缓冲区
     glClear(GL_COLOR_BUFFER_BIT); // 清除颜色缓冲区
     [self.effect prepareToDraw];
@@ -110,6 +131,7 @@
   didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
          fromConnection:(AVCaptureConnection *)connection{
     @synchronized (self) {
+        NSLog(@"======================");
         
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         CVPixelBufferLockBaseAddress(imageBuffer, 0);
@@ -137,28 +159,32 @@
             GLKTextureInfo *texture = [GLKTextureLoader textureWithCGImage:image.CGImage
                                                                    options:options
                                                                      error:&error];
+            
             if (error) {
                 NSLog(@"%@", error);
             }
-            
             if (!self.effect) {
-                _effect = [[GLKBaseEffect alloc] init];
+                self.effect = [[GLKBaseEffect alloc] init];
             }
-            
             self.effect.texture2d0.enabled = GL_TRUE;
             self.effect.texture2d0.name = texture.name;
-            
+
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 GLuint name = texture.name;
                 glDeleteTextures(1, &name);
             });
-            
         });
         CVPixelBufferUnlockBaseAddress(imageBuffer,0);
         CGImageRelease(quartzImage);
         CGContextRelease(context);
         CGColorSpaceRelease(colorSpace);
     }
+}
+
+- (void)quitShootPreviews {
+    [self.cameraManager stopRunning];
+    _cameraManager = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
