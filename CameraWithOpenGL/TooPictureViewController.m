@@ -24,11 +24,9 @@
 @property (nonatomic, strong) GLProgram *glProgram;
 @property (nonatomic, strong) GLKView *glkView;
 @property (nonatomic, assign) GLuint count;
-
-//@property (nonatomic, assign) GLuint texture0;
-//@property (nonatomic, assign) GLuint texture1;
 @property (nonatomic, strong) GLKTextureInfo *texture0;
 @property (nonatomic, strong) GLKTextureInfo *texture1;
+@property (nonatomic, strong) MGCameraManager *cameraManager;
 
 @end
 
@@ -48,98 +46,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initOpenGLView];
- //   [self updateOpenGLView];
 }
 
 - (void)initOpenGLView {
-//    [self buildLayer];
-//    [self buildContext];
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(quitShootPreviews)];
+    self.navigationItem.leftBarButtonItem = btnItem;
     [self buildOpenGLView];
 }
 
-- (void)updateOpenGLView {
-    [self destoryRenderAndFrameBuffer];
-    [self buildRenderBuffer];
-    [self buildFrameBuffer];
-    [self render];
-}
-
-+ (Class)layerClass {
-    // 相当于重写了layer，将layer变为CAEAGLLayer
-    return [CAEAGLLayer class];
-}
-
-- (void)buildLayer {
-    _eagLayer = (CAEAGLLayer *)self.view.layer;
-    
-    [self.view setContentScaleFactor:[[UIScreen mainScreen] scale]];
-    // layer
-    self.eagLayer.opaque = YES;
-    self.eagLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO],
-                                        kEAGLDrawablePropertyRetainedBacking,
-                                        kEAGLColorFormatRGBA8,
-                                        kEAGLDrawablePropertyColorFormat,
-                                        nil];
-}
-
-- (void)buildContext {
-    // 建立上下文 context
-    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    if (!context) {
-        NSLog(@"Failed to initialize OpenGLES 2.0 context");
-        exit(1);
-    }
-    // 设置为当前上下文
-    if (![EAGLContext setCurrentContext:context]) {
-        NSLog(@"Failed to set current OpenGL context");
-        exit(1);
-    }
-    // 现在突然有了？？
-    self.context = context;
-    GLKView *view = (GLKView *)self.view;
-    view.context = self.context;
-    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
-    [EAGLContext setCurrentContext:self.context];
-    
+- (void)quitShootPreviews {
+    [self.cameraManager stopRunning];
+    _cameraManager = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - nothing
 - (void)buildOpenGLView {
-//    CGFloat scale = [[UIScreen mainScreen] scale];
-//    glViewport(self.view.frame.origin.x * scale, self.view.frame.origin.y * scale, self.view.frame.size.width * scale, self.view.frame.size.height * scale);
-//
-//    NSString* vertFile = [[NSBundle mainBundle] pathForResource:@"shaderv" ofType:@"vsh"];
-//    NSString* fragFile = [[NSBundle mainBundle] pathForResource:@"shaderf" ofType:@"fsh"];
-//
-//    self.glProgram = [[GLProgram alloc] initWithVertexShaderString:[NSString stringWithContentsOfFile:vertFile encoding:NSUTF8StringEncoding error:nil] fragmentShaderString:[NSString stringWithContentsOfFile:fragFile encoding:NSUTF8StringEncoding error:nil]];
-//
-//    if (!self.glProgram.initialized) {
-//        [self.glProgram addAttribute:@"position"];// 位置
-//        [self.glProgram addAttribute:@"textCoordinate"];// 纹理
-//        if (![self.glProgram link]) {
-//            // because of the difficulty of searching for mistake, logs are somehow important
-//            NSString *progLog = [self.glProgram programLog];
-//            NSLog(@"Program link log:%@", progLog);
-//            NSString *fragLog = [self.glProgram fragmentShaderLog];
-//            NSLog(@"Fragment shader compile log : %@", fragLog);
-//            NSString *vertLog = [self.glProgram vertexShaderLog];
-//            NSLog(@"Vertex shader compile log : %@", vertLog);
-//            self.glProgram = nil;
-//            NSAssert(NO, @"Filter shader link failed");
-//        }
-//    }
-//
-//    GLuint texture0Uniform = [self.glProgram uniformIndex:@"texture0"];
-//    GLuint texture1Uniform = [self.glProgram uniformIndex:@"texture1"];
-//    GLuint leftBottomUniform = [self.glProgram uniformIndex:@"leftBottom"];
-//    GLuint rightTopUniform = [self.glProgram uniformIndex:@"rightTop"];
-//    GLuint displayPositionAttribute = [self.glProgram attributeIndex:@"position"];
-//    GLuint displayTextureCoordinateAttribute = [self.glProgram attributeIndex:@"textCoordinate"];
-//
-//    [self.glProgram use];// 这又是什么意思
-//    glEnableVertexAttribArray(displayPositionAttribute);
-//    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
-//
+    
     GLKView *view = (GLKView *)self.view;
     view.context = [[EAGLContext alloc]initWithAPI: kEAGLRenderingAPIOpenGLES2];
     //设置当前上下文
@@ -183,15 +109,6 @@
                           NULL);
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     
-    glVertexAttribPointer(displayTextureCoordinateAttribute,
-                          2,
-                          GL_FLOAT,
-                          GL_FALSE,
-                          sizeof(GLfloat) * 5,
-                          (GLfloat *)NULL + 3);
-    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
-    // texture 0
-    
     glVertexAttribPointer(GLKVertexAttribTexCoord0,
                           2,
                           GL_FLOAT,
@@ -200,117 +117,97 @@
                           (GLfloat *)NULL + 3);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     
-//    glVertexAttribPointer(GLKVertexAttribTexCoord1,
-//                          2,
-//                          GL_FLOAT,
-//                          GL_FALSE,
-//                          sizeof(GLfloat) * 5,
-//                          (GLfloat *)NULL + 3);
-//    glEnableVertexAttribArray(GLKVertexAttribTexCoord1);
-    // texture 1
+    glVertexAttribPointer(GLKVertexAttribTexCoord1,
+                          2,
+                          GL_FLOAT,
+                          GL_FALSE,
+                          sizeof(GLfloat) * 5,
+                          (GLfloat *)NULL + 3);
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord1);
     
-    
-//    [self drawTexture:@"doge" texture:_texture0];
-//    [self drawTexture:@"aFei1" texture:_texture1];
-//    glActiveTexture(GL_TEXTURE0);
-//    glBindTexture(GL_TEXTURE_2D, self.texture0);
-//    glUniform1i(texture0Uniform, 0);
-//
-//    glActiveTexture(GL_TEXTURE1);
-//    glBindTexture(GL_TEXTURE_2D, self.texture1);
-//    glUniform1i(texture1Uniform, 1);
-//
-//    glUniform2f(leftBottomUniform, -0.15, -0.15);
-//    glUniform2f(rightTopUniform, 0.30, 0.30);
     [self fillTexture];
 }
 
 - (void)fillTexture {
-    CGImageRef imageOne = [UIImage imageNamed:@"doge"].CGImage;
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@(1), GLKTextureLoaderOriginBottomLeft, nil];
-    self.texture0 = [GLKTextureLoader textureWithCGImage:imageOne options:options error:nil];
+    [self startCameraManager];
+    
+//    CGImageRef imageTwo = [UIImage imageNamed:@"aFei1"].CGImage;
+//    self.texture1 = [GLKTextureLoader textureWithCGImage:imageTwo options:options error:nil];
+//
+//    self.effect.texture2d1.name = self.texture1.name;
+//    self.effect.texture2d1.target = self.texture1.target;
+//    // 混合起来
+//    self.effect.texture2d1.envMode = GLKTextureEnvModeDecal;
+    
+}
 
-    
-    self.effect.texture2d0.name = self.texture0.name;
-    self.effect.texture2d0.target = self.texture0.target;
-    
-    
-    CGImageRef imageTwo = [UIImage imageNamed:@"aFei1"].CGImage;
-    self.texture1 = [GLKTextureLoader textureWithCGImage:imageTwo options:options error:nil];
+#pragma mark - cameraManager
+- (void)startCameraManager {
+    if (!_cameraManager) {
+        _cameraManager = [MGCameraManager videoPreset:AVCaptureSessionPreset640x480
+                                       devicePosition:AVCaptureDevicePositionFront
+                                          videoRecord:YES
+                                           videoSound:NO
+                                            videoName:@"test"];
+        self.cameraManager.videoOrientation = AVCaptureVideoOrientationPortrait;
+        [self.cameraManager setDelegate:self];
+        [self.cameraManager startRunning];
+    }
+}
 
-    self.effect.texture2d1.name = self.texture1.name;
-    self.effect.texture2d1.target = self.texture1.target;
-    // 混合起来
-    self.effect.texture2d1.envMode = GLKTextureEnvModeDecal;
-    
+- (void)mgCaptureOutput:(AVCaptureOutput *)captureOutput
+  didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+         fromConnection:(AVCaptureConnection *)connection {
+    @synchronized (self) {
+        CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        CVPixelBufferLockBaseAddress(imageBuffer, 0);
+        
+        void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
+        
+        size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+        size_t width = CVPixelBufferGetWidth(imageBuffer);
+        size_t height = CVPixelBufferGetHeight(imageBuffer);
+        
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                     bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+        CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+        CGImageRef copyedImage = CGImageCreateWithImageInRect(quartzImage, CGRectMake(0, 0, width, height));
+        UIImage *image = [UIImage imageWithCGImage:copyedImage scale:1.0 orientation:UIImageOrientationUp];
+        CGImageRelease(copyedImage);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSError *error;
+            NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     @(1),
+                                     GLKTextureLoaderOriginBottomLeft,
+                                     nil];
+            GLKTextureInfo *texture = [GLKTextureLoader textureWithCGImage:image.CGImage
+                                                                   options:options
+                                                                     error:&error];
+            if (error) {
+                NSLog(@"%@", error);
+            }
+            if (!self.effect) {
+                self.effect = [[GLKBaseEffect alloc] init];
+            }
+            self.effect.texture2d0.enabled = GL_TRUE;
+            self.effect.texture2d0.name = texture.name;
+            self.effect.texture2d0.target = texture.target;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                GLuint name = texture.name;
+                glDeleteTextures(1, &name);
+            });
+        });
+        CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+        CGImageRelease(quartzImage);
+        CGContextRelease(context);
+        CGColorSpaceRelease(colorSpace);
+    }
 }
 
 #pragma mark - uploadTexture
-- (void)drawTexture:(NSString *)fileName texture:(GLuint)texture{
-    CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
-    size_t width = CGImageGetWidth(spriteImage);
-    size_t height = CGImageGetHeight(spriteImage);
-    
-    GLubyte *spriteData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte));
-    CGContextRef spriteContext = CGBitmapContextCreate(spriteData,
-                                                width,
-                                                height,
-                                                8,
-                                                width * 4,
-                                                CGImageGetColorSpace(spriteImage),
-                                                kCGImageAlphaPremultipliedLast);
-    CGContextDrawImage(spriteContext,
-                       CGRectMake(0, 0, width, height),
-                       spriteImage);
-    CGContextRelease(spriteContext);
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    float fw = width, fh = height;
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
-    free(spriteData);
-}
-
-- (void)destoryRenderAndFrameBuffer {
-    glDeleteFramebuffers(1, &_colorFrameBuffer);
-    glDeleteFramebuffers(1, &_colorRenderBuffer);
-    self.colorFrameBuffer = 0;
-    self.colorRenderBuffer = 0;
-}
-
-#pragma mark - settings
-- (void)render {
-    glClearColor(0, 1.0, 0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glClear(GL_DEPTH_BUFFER_BIT);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-    [self.context presentRenderbuffer:GL_RENDERBUFFER];
-}
-
-- (void)buildFrameBuffer {
-    GLuint buffer;
-    glGenFramebuffers(1, &buffer);
-    self.colorFrameBuffer = buffer;
-    // 设置为当前frameBuffer
-    glBindFramebuffer(GL_FRAMEBUFFER, self.colorRenderBuffer);
-    // 将colorRenderBuffer 装配到 glcolorattachment0
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER,
-                              GL_COLOR_ATTACHMENT0,
-                              GL_RENDERBUFFER,
-                              self.colorRenderBuffer);
-}
-
-- (void)buildRenderBuffer {
-    GLuint buffer;
-    glGenRenderbuffers(1, &buffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, self.colorRenderBuffer);
-    // 为颜色缓冲区分配空间
-    [self.context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.eagLayer];
-}
-
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     glClearColor(0.1, 0.8, 0.1, 1.0);
     
