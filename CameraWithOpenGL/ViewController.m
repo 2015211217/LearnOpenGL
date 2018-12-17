@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "SimplePictureViewController.h"
 #import "MultiPictureViewController.h"
+#import "TooPictureViewController.h"
 #import "CameraViewController.h"
 #import <Masonry/Masonry.h>
 
@@ -65,6 +66,21 @@
     [cameraBtn addTarget:self
                   action:@selector(cameraOpenGLView:)
         forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *tooPicBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:tooPicBtn];
+    [tooPicBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [tooPicBtn.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [tooPicBtn setTitle:@"blend" forState:UIControlStateNormal];
+    [tooPicBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(cameraBtn.mas_bottom).offset(50.0f);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.offset(100.0f);
+        make.height.offset(40.0f);
+    }];
+    [tooPicBtn addTarget:self
+                  action:@selector(tooPictureOpenGLView:)
+        forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - operations
@@ -81,13 +97,15 @@
 - (void)gifOpenGLView:(UIButton *)sender {
     MultiPictureViewController *view = [[MultiPictureViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
-    
 }
 
 - (void)cameraOpenGLView:(UIButton *)sender {
     CameraViewController *view = [[CameraViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
-    
 }
 
+- (void)tooPictureOpenGLView:(UIButton *)sender {
+    TooPictureViewController *view = [[TooPictureViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
+}
 @end

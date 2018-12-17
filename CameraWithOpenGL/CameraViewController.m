@@ -21,8 +21,6 @@
 @property (nonatomic, strong) MGCameraManager *cameraManager;
 @property (nonatomic, assign) int count;
 
-
-
 @end
 
 @implementation CameraViewController
@@ -30,7 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 创建一个新的上下文🤔️
+    // 创建一个新的上下文🤔️, 自定义一个shader， 传入两个纹理和对应矩形的坐标
+    // 在像素着色器内判断当前点的范围，如果处于对应矩形内部，就进行混合操作
+    // 所以shader是用来干什么的，问什么之前都没有用到过捏
+    // 等一下，我前面都没有用到着色器？？？？？？
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                 style:UIBarButtonItemStylePlain
                                                                target:self
@@ -66,6 +67,7 @@
 //        0, 1, 2,
 //        2, 1, 3
 //    };
+    
     self.count = sizeof(indices) / sizeof(GLuint);
     
     // bind points

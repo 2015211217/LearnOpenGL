@@ -37,7 +37,6 @@
         -0.5, -0.5, 0.0, 0.0f, 0.0f,
         0.5, 0.5, 0.0,   1.0f, 1.0f,
     };
-    
     GLuint indices[] = {
         0, 1, 2,
         1, 3, 0
@@ -50,7 +49,6 @@
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(squareVertexData), squareVertexData, GL_STATIC_DRAW);
-    
     GLuint index;
     glGenBuffers(1, &index);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
@@ -87,7 +85,6 @@
     self.mEffect = [[GLKBaseEffect alloc] init];
     self.mEffect.texture2d0.enabled = GL_TRUE;
     self.mEffect.texture2d0.name = textureInfo.name;
-    
 }
 
 #pragma mark - delegate

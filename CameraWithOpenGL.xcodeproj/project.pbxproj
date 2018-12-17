@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7C89848713F80BA11505E1B0 /* libPods-CameraWithOpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */; };
+		9928E87D21C7442D007DF6FA /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9928E87B21C7442D007DF6FA /* shaderf.fsh */; };
+		9928E87E21C7442D007DF6FA /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9928E87C21C7442D007DF6FA /* shaderv.vsh */; };
 		994636EF21BE3C3A004463D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636EE21BE3C3A004463D0 /* AppDelegate.m */; };
 		994636F221BE3C3A004463D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636F121BE3C3A004463D0 /* ViewController.m */; };
 		994636F521BE3C3A004463D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994636F321BE3C3A004463D0 /* Main.storyboard */; };
@@ -28,12 +30,15 @@
 		99C98E7F21BFAC76002909CA /* aFei3.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7821BFA75B002909CA /* aFei3.png */; };
 		99C98E8221C356E6002909CA /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C98E8121C356E5002909CA /* GLProgram.m */; };
 		99C98E8521C37E40002909CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C98E8421C37E40002909CA /* OpenGLES.framework */; };
+		99C98E8C21C397D3002909CA /* TooPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C98E8B21C397D3002909CA /* TooPictureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D62A4719E598A749DDC1D42 /* Pods-CameraWithOpenGL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraWithOpenGL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraWithOpenGL/Pods-CameraWithOpenGL.debug.xcconfig"; sourceTree = "<group>"; };
 		523A2AFC366786DD5792E787 /* Pods-CameraWithOpenGL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraWithOpenGL.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraWithOpenGL/Pods-CameraWithOpenGL.release.xcconfig"; sourceTree = "<group>"; };
 		67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CameraWithOpenGL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9928E87B21C7442D007DF6FA /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderf.fsh; path = CameraWithOpenGL/Extends/shaderf.fsh; sourceTree = SOURCE_ROOT; };
+		9928E87C21C7442D007DF6FA /* shaderv.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderv.vsh; path = CameraWithOpenGL/Extends/shaderv.vsh; sourceTree = SOURCE_ROOT; };
 		994636EA21BE3C3A004463D0 /* CameraWithOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraWithOpenGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		994636ED21BE3C3A004463D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		994636EE21BE3C3A004463D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +75,8 @@
 		99C98E8021C356E5002909CA /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLProgram.h; path = CameraWithOpenGL/Extends/GLProgram.h; sourceTree = SOURCE_ROOT; };
 		99C98E8121C356E5002909CA /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLProgram.m; path = CameraWithOpenGL/Extends/GLProgram.m; sourceTree = SOURCE_ROOT; };
 		99C98E8421C37E40002909CA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		99C98E8A21C397D3002909CA /* TooPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TooPictureViewController.h; sourceTree = "<group>"; };
+		99C98E8B21C397D3002909CA /* TooPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TooPictureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +141,8 @@
 				9946372021BE6A12004463D0 /* MultiPictureViewController.m */,
 				9946372221BE6A20004463D0 /* CameraViewController.h */,
 				9946372321BE6A20004463D0 /* CameraViewController.m */,
+				99C98E8A21C397D3002909CA /* TooPictureViewController.h */,
+				99C98E8B21C397D3002909CA /* TooPictureViewController.m */,
 			);
 			path = CameraWithOpenGL;
 			sourceTree = "<group>";
@@ -223,6 +232,8 @@
 			children = (
 				99C98E8021C356E5002909CA /* GLProgram.h */,
 				99C98E8121C356E5002909CA /* GLProgram.m */,
+				9928E87B21C7442D007DF6FA /* shaderf.fsh */,
+				9928E87C21C7442D007DF6FA /* shaderv.vsh */,
 			);
 			path = Extends;
 			sourceTree = "<group>";
@@ -288,10 +299,12 @@
 				99C98E7D21BFAC76002909CA /* aFei1.png in Resources */,
 				99C98E7E21BFAC76002909CA /* aFei2.png in Resources */,
 				99C98E7F21BFAC76002909CA /* aFei3.png in Resources */,
+				9928E87E21C7442D007DF6FA /* shaderv.vsh in Resources */,
 				994636FA21BE3C3B004463D0 /* LaunchScreen.storyboard in Resources */,
 				994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */,
 				99C98E7A21BFA783002909CA /* doge.png in Resources */,
 				994636F521BE3C3A004463D0 /* Main.storyboard in Resources */,
+				9928E87D21C7442D007DF6FA /* shaderf.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +350,7 @@
 				9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */,
 				9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */,
 				9946371821BE3C85004463D0 /* MGCameraImage.mm in Sources */,
+				99C98E8C21C397D3002909CA /* TooPictureViewController.m in Sources */,
 				994636EF21BE3C3A004463D0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
