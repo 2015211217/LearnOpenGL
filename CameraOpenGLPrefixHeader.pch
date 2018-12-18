@@ -1,0 +1,17 @@
+//
+//  CameraOpenGLPrefixHeader.pch
+//  CameraWithOpenGL
+//
+//  Created by JiangXuanke on 2018/12/17.
+//  Copyright © 2018 JiangXuanke. All rights reserved.
+//
+
+#ifndef CameraOpenGLPrefixHeader_pch
+#define CameraOpenGLPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#include <Masonry/Masonry.h>
+
+#endif /* CameraOpenGLPrefixHeader_pch */

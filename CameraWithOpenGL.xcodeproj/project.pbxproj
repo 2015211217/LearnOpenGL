@@ -10,6 +10,8 @@
 		7C89848713F80BA11505E1B0 /* libPods-CameraWithOpenGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */; };
 		9928E87D21C7442D007DF6FA /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9928E87B21C7442D007DF6FA /* shaderf.fsh */; };
 		9928E87E21C7442D007DF6FA /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9928E87C21C7442D007DF6FA /* shaderv.vsh */; };
+		9928E88221C7994B007DF6FA /* SilentAliveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9928E88121C7994B007DF6FA /* SilentAliveViewController.m */; };
+		9928E88921C8A3C3007DF6FA /* SilentActiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9928E88821C8A3C3007DF6FA /* SilentActiveView.m */; };
 		994636EF21BE3C3A004463D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636EE21BE3C3A004463D0 /* AppDelegate.m */; };
 		994636F221BE3C3A004463D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 994636F121BE3C3A004463D0 /* ViewController.m */; };
 		994636F521BE3C3A004463D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994636F321BE3C3A004463D0 /* Main.storyboard */; };
@@ -39,6 +41,11 @@
 		67AB4A9694185A8647F7CFEE /* libPods-CameraWithOpenGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CameraWithOpenGL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9928E87B21C7442D007DF6FA /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderf.fsh; path = CameraWithOpenGL/Extends/shaderf.fsh; sourceTree = SOURCE_ROOT; };
 		9928E87C21C7442D007DF6FA /* shaderv.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderv.vsh; path = CameraWithOpenGL/Extends/shaderv.vsh; sourceTree = SOURCE_ROOT; };
+		9928E88021C7994B007DF6FA /* SilentAliveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SilentAliveViewController.h; sourceTree = "<group>"; };
+		9928E88121C7994B007DF6FA /* SilentAliveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SilentAliveViewController.m; sourceTree = "<group>"; };
+		9928E88621C7A58F007DF6FA /* CameraOpenGLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraOpenGLPrefixHeader.pch; sourceTree = "<group>"; };
+		9928E88721C8A3C3007DF6FA /* SilentActiveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SilentActiveView.h; sourceTree = "<group>"; };
+		9928E88821C8A3C3007DF6FA /* SilentActiveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SilentActiveView.m; sourceTree = "<group>"; };
 		994636EA21BE3C3A004463D0 /* CameraWithOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraWithOpenGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		994636ED21BE3C3A004463D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		994636EE21BE3C3A004463D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,9 +109,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9928E87F21C79910007DF6FA /* SlientAliveView */ = {
+			isa = PBXGroup;
+			children = (
+				9928E88021C7994B007DF6FA /* SilentAliveViewController.h */,
+				9928E88121C7994B007DF6FA /* SilentAliveViewController.m */,
+				9928E88721C8A3C3007DF6FA /* SilentActiveView.h */,
+				9928E88821C8A3C3007DF6FA /* SilentActiveView.m */,
+			);
+			name = SlientAliveView;
+			sourceTree = "<group>";
+		};
 		994636E121BE3C39004463D0 = {
 			isa = PBXGroup;
 			children = (
+				9928E88621C7A58F007DF6FA /* CameraOpenGLPrefixHeader.pch */,
 				9946370321BE3C85004463D0 /* MGCameraKit */,
 				994636EC21BE3C3A004463D0 /* CameraWithOpenGL */,
 				99C98E7321BFA73D002909CA /* Pictures */,
@@ -125,6 +144,7 @@
 		994636EC21BE3C3A004463D0 /* CameraWithOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				9928E87F21C79910007DF6FA /* SlientAliveView */,
 				99C98E8321C356EC002909CA /* Extends */,
 				994636ED21BE3C3A004463D0 /* AppDelegate.h */,
 				994636EE21BE3C3A004463D0 /* AppDelegate.m */,
@@ -345,6 +365,8 @@
 				9946371521BE3C85004463D0 /* MGCameraRecordManager.m in Sources */,
 				994636FD21BE3C3B004463D0 /* main.m in Sources */,
 				99C98E8221C356E6002909CA /* GLProgram.m in Sources */,
+				9928E88921C8A3C3007DF6FA /* SilentActiveView.m in Sources */,
+				9928E88221C7994B007DF6FA /* SilentAliveViewController.m in Sources */,
 				9946371621BE3C85004463D0 /* MGCameraManager.mm in Sources */,
 				9946372421BE6A20004463D0 /* CameraViewController.m in Sources */,
 				9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */,
@@ -496,6 +518,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F4LXZEHY23;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./CameraOpenGLPrefixHeader.pch;
 				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,6 +540,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./CameraOpenGLPrefixHeader.pch;
 				INFOPLIST_FILE = CameraWithOpenGL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

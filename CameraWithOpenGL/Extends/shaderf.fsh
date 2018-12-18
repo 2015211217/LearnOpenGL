@@ -7,14 +7,16 @@ uniform lowp vec2 rightTop;
 uniform sampler2D myTexture0;
 uniform sampler2D myTexture1;
 
-
+// 着色器语言
 void main()
 {
     if (varyOtherPostion.x >= leftBottom.x && varyOtherPostion.y >= leftBottom.y && varyOtherPostion.x <= rightTop.x && varyOtherPostion.y <= rightTop.y) {
-        // hhhhhh，目前为止完全看不懂呢
+        
         lowp vec2 test = vec2((varyOtherPostion.x - leftBottom.x) / (rightTop.x - leftBottom.x), 1.0 -  (varyOtherPostion.y - leftBottom.y) / (rightTop.y - leftBottom.y));
+        
         lowp vec4 otherColor = texture2D(myTexture1, test);
 //        otherColor.a = 0.8;
+        
         gl_FragColor = otherColor * otherColor.a + texture2D(myTexture0, 1.0 - varyTextCoord) * (1.0 - otherColor.a);
     }
     else {

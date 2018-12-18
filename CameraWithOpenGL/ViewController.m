@@ -10,6 +10,7 @@
 #import "MultiPictureViewController.h"
 #import "TooPictureViewController.h"
 #import "CameraViewController.h"
+#import "SilentAliveViewController.h"
 #import <Masonry/Masonry.h>
 
 @implementation ViewController
@@ -106,6 +107,11 @@
 
 - (void)tooPictureOpenGLView:(UIButton *)sender {
     TooPictureViewController *view = [[TooPictureViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
+}
+
+- (void)silentActionView:(UIButton *)sender {
+    SilentAliveViewController *view = [[SilentAliveViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 @end

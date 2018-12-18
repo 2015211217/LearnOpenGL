@@ -27,21 +27,11 @@
 @property (nonatomic, strong) GLKTextureInfo *texture0;
 @property (nonatomic, strong) GLKTextureInfo *texture1;
 @property (nonatomic, strong) MGCameraManager *cameraManager;
+@property (nonatomic, assign) int circlePercentage;
 
 @end
 
 @implementation TooPictureViewController
-
-//- (void)dealloc{
-//    GLKView *view = (GLKView *)self.view;
-//    [EAGLContext setCurrentContext:view.context];
-//    if ( 0 != vertextBufferID) {
-//        glDeleteBuffers(1,
-//                        &vertextBufferID);
-//        vertextBufferID = 0;
-//    }
-//    [EAGLContext setCurrentContext:nil];
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +55,6 @@
 
 #pragma mark - nothing
 - (void)buildOpenGLView {
-    
     GLKView *view = (GLKView *)self.view;
     view.context = [[EAGLContext alloc]initWithAPI: kEAGLRenderingAPIOpenGLES2];
     //设置当前上下文
@@ -85,22 +74,23 @@
     
     _count = sizeof(indices) / sizeof(GLuint);
 
-    // 绑定顶点坐标
-    self.effect = [[GLKBaseEffect alloc] init];
-    self.effect.useConstantColor = GL_TRUE;
-    self.effect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+//    // 绑定顶点坐标
+//    self.effect = [[GLKBaseEffect alloc] init];
+//    self.effect.useConstantColor = GL_TRUE;
+//    self.effect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     
-    [self fillTexture];
-    
-    GLuint buffer;
+    GLuint buffer;// 顶点缓冲对象
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(squarePoints), squarePoints, GL_DYNAMIC_DRAW);
+   
+    
     GLuint index;
     glGenBuffers(1, &index);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     
+
     glVertexAttribPointer(GLKVertexAttribPosition,
                           3,
                           GL_FLOAT,
@@ -124,20 +114,28 @@
                           sizeof(GLfloat) * 5,
                           (GLfloat *)NULL + 3);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord1);
+//
+//    glGenTextures(1, &self.texture0);
+//    glBindTexture(GL_TEXTURE_2D, self.texture0);
     
-    [self fillTexture];
+    [self startCameraManager];
+    [self renderCircle];
 }
 
-- (void)fillTexture {
-    [self startCameraManager];
+- (void)renderCircle {
+    // 绘制圆形
+    GLuint vertexCount = 100;
+    float delta = 2.0 * M_PI / vertexCount;
     
-//    CGImageRef imageTwo = [UIImage imageNamed:@"aFei1"].CGImage;
-//    self.texture1 = [GLKTextureLoader textureWithCGImage:imageTwo options:options error:nil];
-//
-//    self.effect.texture2d1.name = self.texture1.name;
-//    self.effect.texture2d1.target = self.texture1.target;
-//    // 混合起来
-//    self.effect.texture2d1.envMode = GLKTextureEnvModeDecal;
+    float a = 0.8;
+    float b = a * self.view.frame.size.width / self.view.frame.size.height;
+    
+    for (int i = 0; i < vertexCount; i++) {
+        GLfloat x = a * cos(delta * i); // 计算x
+        GLfloat y = b * sin(delta * i);
+        GLfloat z = 0.0f;
+    }
+    
     
 }
 
@@ -182,6 +180,7 @@
                                      @(1),
                                      GLKTextureLoaderOriginBottomLeft,
                                      nil];
+            
             GLKTextureInfo *texture = [GLKTextureLoader textureWithCGImage:image.CGImage
                                                                    options:options
                                                                      error:&error];
@@ -194,6 +193,19 @@
             self.effect.texture2d0.enabled = GL_TRUE;
             self.effect.texture2d0.name = texture.name;
             self.effect.texture2d0.target = texture.target;
+            
+            
+//            GLKTextureInfo *texture1 = [GLKTextureLoader textureWithContentsOfFile:@"doge"
+//                                                                           options:options
+//                                                                             error:nil];
+//           // self.effect.texture2d1.enabled = GL_TRUE;
+//            self.effect.texture2d1.name = texture1.name;
+//            self.effect.texture2d1.target = texture1.target;
+//            glEnable(GL_BLEND);
+//            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//            self.effect.texture2d1.envMode = GLKTextureEnvModeDecal;
+            
+            
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 GLuint name = texture.name;
