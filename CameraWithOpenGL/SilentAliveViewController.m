@@ -24,12 +24,14 @@
 }
 
 - (void)buildOpenGLView {
-//    self.openGLView = (SilentActiveView *)self.view;
-    
     self.openGLView = [[SilentActiveView alloc] init];
+    [self.view addSubview:self.openGLView];
+    [self.openGLView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
-    [self.openGLView customInit];
-    [self.openGLView update];
+    [self.openGLView layoutSubviews];
+   // [self.openGLView customInit];
 }
 
 @end

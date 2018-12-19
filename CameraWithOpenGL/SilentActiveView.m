@@ -1,92 +1,274 @@
+////
+////  SilentActiveView.m
+////  CameraWithOpenGL
+////
+////  Created by JiangXuanke on 2018/12/18.
+////  Copyright © 2018 JiangXuanke. All rights reserved.
+////
 //
-//  SilentActiveView.m
-//  CameraWithOpenGL
+//#import "SilentActiveView.h"
+//#import "GLProgram.h"
+//#import <OpenGLES/ES2/gl.h>
+//#import <OpenGLES/ES2/glext.h>
 //
-//  Created by JiangXuanke on 2018/12/18.
-//  Copyright © 2018 JiangXuanke. All rights reserved.
-//  
+//@interface SilentActiveView() <GLKViewDelegate>
+//
+//@property (nonatomic, strong) EAGLContext* context;
+//@property (nonatomic, assign) GLuint pointBuffer;
+//@property (nonatomic, assign) GLuint indexBuffer;
+//@property (nonatomic, strong) GLProgram *program;
+//@property (nonatomic, assign) GLuint *programInt;
+//@property (nonatomic, assign) GLuint textureOne;
+//@property (nonatomic, assign) GLuint textureTwo;
+//@property (nonatomic, strong) CAEAGLLayer *eagLayer;
+//
+//@end
+//
+//@implementation SilentActiveView
+//
+//+ (Class)layerClass {
+//    return [CAEAGLLayer class];
+//}
+//
+//- (void)customInit {
+//    // layer
+//
+//    _eagLayer = (CAEAGLLayer*) self.layer;
+//    //设置放大倍数
+//    [self setContentScaleFactor:[[UIScreen mainScreen] scale]];
+//
+//    // CALayer 默认是透明的，必须将它设为不透明才能让其可见
+//    self.eagLayer.opaque = YES;
+//
+//    // 设置描绘属性，在这里设置不维持渲染内容以及颜色格式为 RGBA8
+//    self.eagLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                          [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
+//
+//
+//    // 按照自己懂得步骤来进行,结果并没有结果
+//    // [self setBackgroundColor:[UIColor blueColor]];
+//    // 建立上下文
+//    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+////    GLKView *view = (GLKView *)self;
+////    view.context = self.context;
+////    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+//
+//    if (!self.context) {
+//        NSLog(@"context initialize failed");
+//    }
+//    [EAGLContext setCurrentContext:self.context];
+//
+//
+//    CGFloat scale = [[UIScreen mainScreen] scale]; //获取视图放大倍数，可以把scale设置为1试试
+//    glViewport(self.frame.origin.x * scale, self.frame.origin.y * scale, self.frame.size.width * scale, self.frame.size.height * scale); //设置视口大小
+//    //读取文件路径
+//    NSString* vertFile = [[NSBundle mainBundle] pathForResource:@"shaderv" ofType:@"vsh"];
+//    NSString* fragFile = [[NSBundle mainBundle] pathForResource:@"shaderf" ofType:@"fsh"];
+//    //加载shader
+//    self.program = [[GLProgram alloc] initWithVertexShaderString:[NSString stringWithContentsOfFile:vertFile encoding:NSUTF8StringEncoding error:nil] fragmentShaderString:[NSString stringWithContentsOfFile:fragFile encoding:NSUTF8StringEncoding error:nil]];
+//    if (!self.program.initialized)
+//    {
+//        [self.program addAttribute:@"position"];
+//        [self.program addAttribute:@"textCoordinate"];
+//        if (![self.program link])
+//        {
+//            NSString *progLog = [self.program programLog];
+//            NSLog(@"Program link log: %@", progLog);
+//            NSString *fragLog = [self.program fragmentShaderLog];
+//            NSLog(@"Fragment shader compile log: %@", fragLog);
+//            NSString *vertLog = [self.program vertexShaderLog];
+//            NSLog(@"Vertex shader compile log: %@", vertLog);
+//            self.program = nil;
+//            NSAssert(NO, @"Filter shader link failed");
+//        }
+//    }
+//
+//    GLuint texture0Uniform = [self.program uniformIndex:@"myTexture0"];
+//    GLuint texture1Uniform = [self.program uniformIndex:@"myTexture1"];
+//    GLuint leftBottomUniform = [self.program uniformIndex:@"leftBottom"];
+//    GLuint rightTopUniform = [self.program uniformIndex:@"rightTop"];
+//    GLuint displayPositionAttribute = [self.program attributeIndex:@"position"];
+//    GLuint displayTextureCoordinateAttribute = [self.program attributeIndex:@"textCoordinate"];
+//
+//    [self.program use];
+//    glEnableVertexAttribArray(displayPositionAttribute);
+//    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
+//
+//    //设置顶点和顶点着色器
+//    GLfloat pointArr[] = {
+//        0.5f, -0.5f, 0.0f,     1.0f, 0.0f,
+//        -0.5f, 0.5f, 0.0f,     0.0f, 1.0f,
+//        -0.5f, -0.5f, 0.0f,    0.0f, 0.0f,
+//        0.5f, 0.5f, 0.0,      1.0f, 1.0f,
+//    };
+//    GLuint indiceArr[] = {
+//        0, 1, 2,
+//        1, 2, 3
+//    };
+//
+//    GLuint VAO;
+//    glGenBuffers(1, &VAO);
+//    self.pointBuffer = VAO;
+//    glBindBuffer(GL_ARRAY_BUFFER, VAO);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(pointArr), pointArr, GL_DYNAMIC_DRAW);
+//    GLuint VBO;
+//    glGenBuffers(1, &VBO);
+//    self.indexBuffer  = VBO;
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, VBO);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indiceArr), indiceArr, GL_STATIC_DRAW);
+//
+//    glVertexAttribPointer(displayPositionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, NULL);
+//    glEnableVertexAttribArray(displayPositionAttribute);
+//    glVertexAttribPointer(displayTextureCoordinateAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (GLfloat *)NULL + 3);
+//    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
+//
+//    // 激活纹理
+//    [self buildFirstTexture];
+//    glActiveTexture(GL_TEXTURE0);
+//    glEnable(GL_TEXTURE_2D);
+//    glGenTextures(1, &(_textureOne));
+//    glBindTexture(GL_TEXTURE_2D, self.textureOne);
+//    glUniform1i(texture0Uniform, 0);
+//
+//    // texture2
+//
+////    // texture 0
+////    GLuint texture0, texture1;
+////    glGenTextures(1, &texture0);
+////
+////    // texture wrapping parameters
+////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+////    // texture filtering parameters
+////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+////    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+////    //unsigned char *data =
+////
+////    if (data) {
+////        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, self.frame.size.width, self.frame.size.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+////        // glGenTextures(1, &texture1);
+////    } else {
+////        NSLog(@"texture0 upload failed");
+////    }
+//
+//
+//
+//   // [self buildTexture];
+//
+//
+//}
+//
+//
+//- (void)buildFirstTexture {
+//    CGImageRef spriteImage = [UIImage imageNamed:@"doge"].CGImage;
+//    if (!spriteImage) {
+//        NSLog(@"Failed to load image one");
+//        exit(1);
+//    }
+//
+//    // 2 读取图片的大小
+//    size_t width = CGImageGetWidth(spriteImage);
+//    size_t height = CGImageGetHeight(spriteImage);
+//    GLubyte * spriteData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte)); //rgba共4个byte
+//    CGContextRef spriteContext = CGBitmapContextCreate(spriteData, width, height, 8, width*4,
+//                                                       CGImageGetColorSpace(spriteImage), kCGImageAlphaPremultipliedLast);
+//    // 3在CGContextRef上绘图
+//    CGContextDrawImage(spriteContext, CGRectMake(0, 0, width, height), spriteImage);
+//    CGContextRelease(spriteContext);
+//    glGenTextures(1, &(_textureOne));
+//    glBindTexture(GL_TEXTURE_2D, self.textureOne);
+//
+//    // 上传纹理数据
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+//
+//    float fw = width, fh = height;
+//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
+//
+//    free(spriteData);
+//}
+//
+////- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+////    glClearColor(0, 1.0, 0, 1.0);
+////    glClear(GL_COLOR_BUFFER_BIT);
+////    glDrawArrays(GL_TRIANGLES, 0, 6);
+////    [self.context presentRenderbuffer:GL_RENDERBUFFER];
+////}
+//
+//
+//@end
 
 #import "SilentActiveView.h"
-#import "GLProgram.h"
 #import <OpenGLES/ES2/gl.h>
-#import <OpenGLES/ES2/glext.h>
 
 @interface SilentActiveView()
-
 @property (nonatomic , strong) EAGLContext* myContext;
 @property (nonatomic , strong) CAEAGLLayer* myEagLayer;
-@property (nonatomic , assign) GLuint myProgram;
+@property (nonatomic , assign) GLuint       myProgram;
+
+
 @property (nonatomic , assign) GLuint myColorRenderBuffer;
 @property (nonatomic , assign) GLuint myColorFrameBuffer;
-@property (nonatomic , strong) GLProgram* mProgram;
-@property (nonatomic , assign) GLuint myTexture0;
-@property (nonatomic , assign) GLuint myTexture1;
+
 - (void)setupLayer;
 
 @end
 
 @implementation SilentActiveView
+
 + (Class)layerClass {
     return [CAEAGLLayer class];
 }
 
-- (void)customInit {
+- (void)layoutSubviews {
+    
     [self setupLayer];
+    
     [self setupContext];
-    [self setupProgram];
-}
-
-- (void)update {
+    
     [self destoryRenderAndFrameBuffer];
+    
     [self setupRenderBuffer];
+    
     [self setupFrameBuffer];
+    
     [self render];
 }
 
 - (void)render {
     glClearColor(0, 1.0, 0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-    [self.myContext presentRenderbuffer:GL_RENDERBUFFER];
-}
-
-- (void)setupProgram {
+    
+    
     CGFloat scale = [[UIScreen mainScreen] scale]; //获取视图放大倍数，可以把scale设置为1试试
     glViewport(self.frame.origin.x * scale, self.frame.origin.y * scale, self.frame.size.width * scale, self.frame.size.height * scale); //设置视口大小
+    
     //读取文件路径
     NSString* vertFile = [[NSBundle mainBundle] pathForResource:@"shaderv" ofType:@"vsh"];
     NSString* fragFile = [[NSBundle mainBundle] pathForResource:@"shaderf" ofType:@"fsh"];
-    //加载shader
-    self.mProgram = [[GLProgram alloc] initWithVertexShaderString:[NSString stringWithContentsOfFile:vertFile encoding:NSUTF8StringEncoding error:nil] fragmentShaderString:[NSString stringWithContentsOfFile:fragFile encoding:NSUTF8StringEncoding error:nil]];
     
-    if (!self.mProgram.initialized)
-    {
-        [self.mProgram addAttribute:@"position"];
-        [self.mProgram addAttribute:@"textCoordinate"];
-        if (![self.mProgram link])
-        {
-            NSString *progLog = [self.mProgram programLog];
-            NSLog(@"Program link log: %@", progLog);
-            NSString *fragLog = [self.mProgram fragmentShaderLog];
-            NSLog(@"Fragment shader compile log: %@", fragLog);
-            NSString *vertLog = [self.mProgram vertexShaderLog];
-            NSLog(@"Vertex shader compile log: %@", vertLog);
-            self.mProgram = nil;
-            NSAssert(NO, @"Filter shader link failed");
-        }
+    //加载shader
+    self.myProgram = [self loadShaders:vertFile frag:fragFile];
+    
+    //链接
+    glLinkProgram(self.myProgram);
+    GLint linkSuccess;
+    glGetProgramiv(self.myProgram, GL_LINK_STATUS, &linkSuccess);
+    if (linkSuccess == GL_FALSE) { //连接错误
+        GLchar messages[256];
+        glGetProgramInfoLog(self.myProgram, sizeof(messages), 0, &messages[0]);
+        NSString *messageString = [NSString stringWithUTF8String:messages];
+        NSLog(@"error%@", messageString);
+        return ;
+    }
+    else {
+        NSLog(@"link ok");
+        glUseProgram(self.myProgram); //成功便使用，避免由于未使用导致的的bug
     }
     
-    GLuint texture0Uniform = [self.mProgram uniformIndex:@"myTexture0"];
-    GLuint texture1Uniform = [self.mProgram uniformIndex:@"myTexture1"];
-    GLuint leftBottomUniform = [self.mProgram uniformIndex:@"leftBottom"];
-    GLuint rightTopUniform = [self.mProgram uniformIndex:@"rightTop"];
-    GLuint displayPositionAttribute = [self.mProgram attributeIndex:@"position"];
-    GLuint displayTextureCoordinateAttribute = [self.mProgram attributeIndex:@"textCoordinate"];
     
-    
-    [self.mProgram use];
-    glEnableVertexAttribArray(displayPositionAttribute);
-    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
     
     //前三个是顶点坐标， 后面两个是纹理坐标
     GLfloat attrArr[] =
@@ -104,36 +286,88 @@
     glBindBuffer(GL_ARRAY_BUFFER, attrBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(attrArr), attrArr, GL_DYNAMIC_DRAW);
     
+    GLuint position = glGetAttribLocation(self.myProgram, "position");
+    glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, NULL);
+    glEnableVertexAttribArray(position);
     
-    glVertexAttribPointer(displayPositionAttribute, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, NULL);
-    glEnableVertexAttribArray(displayPositionAttribute);
-    
-    glVertexAttribPointer(displayTextureCoordinateAttribute, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (float *)NULL + 3);
-    glEnableVertexAttribArray(displayTextureCoordinateAttribute);
+    GLuint textCoor = glGetAttribLocation(self.myProgram, "textCoordinate");
+    glVertexAttribPointer(textCoor, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (float *)NULL + 3);
+    glEnableVertexAttribArray(textCoor);
     
     //加载纹理
-    [self setupFirstTexture:@"doge"];
-    [self setupSecondTexture:@"aFei1"];
+    [self setupTexture:@"doge"];
     
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, self.myTexture0);
-    glUniform1i(texture0Uniform, 0);
+    //获取shader里面的变量，这里记得要在glLinkProgram后面，后面，后面！
+    GLuint rotate = glGetUniformLocation(self.myProgram, "rotateMatrix");
     
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, self.myTexture1);
-    glUniform1i(texture1Uniform, 1);
+    float radians = 10 * 3.14159f / 180.0f;
+    float s = sin(radians);
+    float c = cos(radians);
     
-    glUniform2f(leftBottomUniform, -0.5, -0.5);
-    glUniform2f(rightTopUniform, 0.30, 0.30);
+    //z轴旋转矩阵
+    GLfloat zRotation[16] = { //
+        c, -s, 0, 0.2, //
+        s, c, 0, 0,//
+        0, 0, 1.0, 0,//
+        0.0, 0, 0, 1.0//
+    };
+    
+    //设置旋转矩阵
+    glUniformMatrix4fv(rotate, 1, GL_FALSE, (GLfloat *)&zRotation[0]);
+    
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    
+    [self.myContext presentRenderbuffer:GL_RENDERBUFFER];
 }
+
+/**
+ *  c语言编译流程：预编译、编译、汇编、链接
+ *  glsl的编译过程主要有glCompileShader、glAttachShader、glLinkProgram三步；
+ *  @param vert 顶点着色器
+ *  @param frag 片元着色器
+ *
+ *  @return 编译成功的shaders
+ */
+- (GLuint)loadShaders:(NSString *)vert frag:(NSString *)frag {
+    GLuint verShader, fragShader;
+    GLint program = glCreateProgram();
+    
+    //编译
+    [self compileShader:&verShader type:GL_VERTEX_SHADER file:vert];
+    [self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:frag];
+    
+    glAttachShader(program, verShader);
+    glAttachShader(program, fragShader);
+    
+    
+    //释放不需要的shader
+    glDeleteShader(verShader);
+    glDeleteShader(fragShader);
+    
+    return program;
+}
+
+- (void)compileShader:(GLuint *)shader type:(GLenum)type file:(NSString *)file {
+    //读取字符串
+    NSString* content = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil];
+    const GLchar* source = (GLchar *)[content UTF8String];
+    
+    *shader = glCreateShader(type);
+    glShaderSource(*shader, 1, &source, NULL);
+    glCompileShader(*shader);
+}
+
+
 
 - (void)setupLayer
 {
     self.myEagLayer = (CAEAGLLayer*) self.layer;
     //设置放大倍数
     [self setContentScaleFactor:[[UIScreen mainScreen] scale]];
+    
     // CALayer 默认是透明的，必须将它设为不透明才能让其可见
     self.myEagLayer.opaque = YES;
+    
     // 设置描绘属性，在这里设置不维持渲染内容以及颜色格式为 RGBA8
     self.myEagLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                           [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
@@ -172,7 +406,7 @@
     glGenFramebuffers(1, &buffer);
     self.myColorFrameBuffer = buffer;
     // 设置为当前 framebuffer
-    glBindFramebuffer(GL_FRAMEBUFFER, self.myColorRenderBuffer);
+    glBindFramebuffer(GL_FRAMEBUFFER, self.myColorFrameBuffer);
     // 将 _colorRenderBuffer 装配到 GL_COLOR_ATTACHMENT0 这个装配点上
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
                               GL_RENDERBUFFER, self.myColorRenderBuffer);
@@ -189,7 +423,8 @@
 
 
 
-- (GLuint)setupFirstTexture:(NSString *)fileName {
+
+- (GLuint)setupTexture:(NSString *)fileName {
     // 1获取图片的CGImageRef
     CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
     if (!spriteImage) {
@@ -211,9 +446,9 @@
     
     CGContextRelease(spriteContext);
     
+    // 4绑定纹理到默认的纹理ID（这里只有一张图片，故而相当于默认于片元着色器里面的colorMap，如果有多张图不可以这么做）
+    glBindTexture(GL_TEXTURE_2D, 0);
     
-    glGenTextures(1, &_myTexture0);
-    glBindTexture(GL_TEXTURE_2D, self.myTexture0);
     
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
@@ -223,45 +458,7 @@
     float fw = width, fh = height;
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
     
-    
-    free(spriteData);
-    return 0;
-}
-
-
-
-- (GLuint)setupSecondTexture:(NSString *)fileName { // ? ? ? ? ? ? ? ? ? ? ? ? ?
-    // 1获取图片的CGImageRef
-    CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
-    if (!spriteImage) {
-        NSLog(@"Failed to load image %@", fileName);
-        exit(1);
-    }
-    
-    // 2 读取图片的大小
-    size_t width = CGImageGetWidth(spriteImage);
-    size_t height = CGImageGetHeight(spriteImage);
-    
-    GLubyte * spriteData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte)); //rgba共4个byte
-    
-    CGContextRef spriteContext = CGBitmapContextCreate(spriteData, width, height, 8, width*4,
-                                                       CGImageGetColorSpace(spriteImage), kCGImageAlphaPremultipliedLast);
-    
-    // 3在CGContextRef上绘图
-    CGContextDrawImage(spriteContext, CGRectMake(0, 0, width, height), spriteImage);
-    
-    CGContextRelease(spriteContext);
-    
-    glGenTextures(1, &(_myTexture1));
-    glBindTexture(GL_TEXTURE_2D, self.myTexture1);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    
-    float fw = width, fh = height;
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
+    glBindTexture(GL_TEXTURE_2D, 0);
     
     free(spriteData);
     return 0;

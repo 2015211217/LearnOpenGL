@@ -80,7 +80,7 @@
         make.height.offset(40.0f);
     }];
     [tooPicBtn addTarget:self
-                  action:@selector(tooPictureOpenGLView:)
+                  action:@selector(silentActionView:)
         forControlEvents:UIControlEventTouchUpInside];
 }
 
