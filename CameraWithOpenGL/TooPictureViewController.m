@@ -83,8 +83,6 @@
     glGenBuffers(1, &buffer);
     glBindBuffer(GL_ARRAY_BUFFER, buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(squarePoints), squarePoints, GL_DYNAMIC_DRAW);
-   
-    
     GLuint index;
     glGenBuffers(1, &index);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
