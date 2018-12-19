@@ -13,8 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SilentActiveView : UIView
-//- (void)customInit;
-- (void)layoutSubviews;
+
 
 @end
 

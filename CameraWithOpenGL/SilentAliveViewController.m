@@ -29,9 +29,7 @@
     [self.openGLView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
-    [self.openGLView layoutSubviews];
-   // [self.openGLView customInit];
+
 }
 
 @end

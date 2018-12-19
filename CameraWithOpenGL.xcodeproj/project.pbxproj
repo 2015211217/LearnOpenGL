@@ -26,6 +26,7 @@
 		9946371E21BE6A05004463D0 /* SimplePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946371D21BE6A05004463D0 /* SimplePictureViewController.m */; };
 		9946372121BE6A12004463D0 /* MultiPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372021BE6A12004463D0 /* MultiPictureViewController.m */; };
 		9946372421BE6A20004463D0 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9946372321BE6A20004463D0 /* CameraViewController.m */; };
+		9960A7E921CA27DE0071052F /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9960A7E821CA27DE0071052F /* abc.png */; };
 		99C98E7A21BFA783002909CA /* doge.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7921BFA783002909CA /* doge.png */; };
 		99C98E7D21BFAC76002909CA /* aFei1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7621BFA756002909CA /* aFei1.png */; };
 		99C98E7E21BFAC76002909CA /* aFei2.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C98E7721BFA758002909CA /* aFei2.png */; };
@@ -75,6 +76,7 @@
 		9946372021BE6A12004463D0 /* MultiPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiPictureViewController.m; sourceTree = "<group>"; };
 		9946372221BE6A20004463D0 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		9946372321BE6A20004463D0 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		9960A7E821CA27DE0071052F /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = SOURCE_ROOT; };
 		99C98E7621BFA756002909CA /* aFei1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei1.png; sourceTree = "<group>"; };
 		99C98E7721BFA758002909CA /* aFei2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei2.png; sourceTree = "<group>"; };
 		99C98E7821BFA75B002909CA /* aFei3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aFei3.png; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				994636F621BE3C3B004463D0 /* Assets.xcassets */,
 				994636F821BE3C3B004463D0 /* LaunchScreen.storyboard */,
 				994636FB21BE3C3B004463D0 /* Info.plist */,
+				9960A7E821CA27DE0071052F /* abc.png */,
 				994636FC21BE3C3B004463D0 /* main.m */,
 				9946371C21BE6A05004463D0 /* SimplePictureViewController.h */,
 				9946371D21BE6A05004463D0 /* SimplePictureViewController.m */,
@@ -324,6 +327,7 @@
 				994636F721BE3C3B004463D0 /* Assets.xcassets in Resources */,
 				99C98E7A21BFA783002909CA /* doge.png in Resources */,
 				994636F521BE3C3A004463D0 /* Main.storyboard in Resources */,
+				9960A7E921CA27DE0071052F /* abc.png in Resources */,
 				9928E87D21C7442D007DF6FA /* shaderf.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
