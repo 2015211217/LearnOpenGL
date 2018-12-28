@@ -1,0 +1,6 @@
+framework module KASSilentLive {
+  umbrella header "KASSilentLive.h"
+
+  export *
+  module * { export * }
+}

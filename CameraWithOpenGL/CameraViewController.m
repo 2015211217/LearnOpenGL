@@ -134,12 +134,9 @@
          fromConnection:(AVCaptureConnection *)connection{
     @synchronized (self) {
         NSLog(@"======================");
-        
         CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         CVPixelBufferLockBaseAddress(imageBuffer, 0);
-        
         void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-        
         size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
         size_t width = CVPixelBufferGetWidth(imageBuffer);
         size_t height = CVPixelBufferGetHeight(imageBuffer);

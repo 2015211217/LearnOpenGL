@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CameraWithOpenGL.xcodeproj">
    </FileRef>
    <FileRef

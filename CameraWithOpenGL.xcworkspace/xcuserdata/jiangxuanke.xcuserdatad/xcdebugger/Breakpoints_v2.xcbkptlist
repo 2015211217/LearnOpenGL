@@ -55,13 +55,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CameraWithOpenGL/SilentActiveView.m"
-            timestampString = "566897492.4913189"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/MegFace/Manager/MGFaceIDFaceManager.cpp"
+            timestampString = "567675922.773698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "-setupTexture:"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "detect_face_landmark(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -71,13 +71,231 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CameraWithOpenGL/SilentActiveView.m"
-            timestampString = "566897492.492022"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/MegFace/Manager/MGFaceIDFaceManager.cpp"
+            timestampString = "567675922.773935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "-setupSecondTexture:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "detect_face_landmark(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
+            timestampString = "567675922.774164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "fmp_detect_image(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
+            timestampString = "567675922.774323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "fmp_detect_image(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
+            timestampString = "567675922.774559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "fmp_detect_image(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/MegFace/Manager/MGFaceIDFaceManager.cpp"
+            timestampString = "567675922.774658"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "FaceIDFaceManager::detect_face_landmark(const void *face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
+            timestampString = "567675922.774765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "fmp_detect_image(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MGSilentLiveDetectManager.mm"
+            timestampString = "567675922.774859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-detectImageIsLiveWithFMP:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MGSilentLiveDetectManager.mm"
+            timestampString = "567675922.774968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-detectImageIsLiveWithFMP:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MGSilentLiveDetectManager.mm"
+            timestampString = "567675922.775063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-detectImageIsLiveWithFMP:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MGSilentLiveDetectManager.mm"
+            timestampString = "567675922.775176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-initWithFaceModel:fmpModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/MegFace/Manager/MGFaceIDFaceManager.cpp"
+            timestampString = "567675922.775296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "FaceIDFaceManager::load_model_data(const void* face_data)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MGSilentLiveDetectManager.mm"
+            timestampString = "567675922.775383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-initWithFaceModel:fmpModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
+            timestampString = "567675922.775479"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "load_model_data(const void* face_data, const void* fmp_data)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/MegFace/Manager/MGFaceIDFaceManager.cpp"
+            timestampString = "567675922.775591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "detect_face_landmark(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

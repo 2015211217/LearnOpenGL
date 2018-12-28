@@ -192,19 +192,6 @@
             self.effect.texture2d0.name = texture.name;
             self.effect.texture2d0.target = texture.target;
             
-            
-//            GLKTextureInfo *texture1 = [GLKTextureLoader textureWithContentsOfFile:@"doge"
-//                                                                           options:options
-//                                                                             error:nil];
-//           // self.effect.texture2d1.enabled = GL_TRUE;
-//            self.effect.texture2d1.name = texture1.name;
-//            self.effect.texture2d1.target = texture1.target;
-//            glEnable(GL_BLEND);
-//            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-//            self.effect.texture2d1.envMode = GLKTextureEnvModeDecal;
-            
-            
-            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 GLuint name = texture.name;
                 glDeleteTextures(1, &name);
