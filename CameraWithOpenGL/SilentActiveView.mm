@@ -160,6 +160,7 @@ using namespace std;
  *
  *  @return 编译成功的shaders
  */
+
 #pragma mark - cameraManager
 - (void)startCameraManager {
     if (!_cameraManager) {
@@ -306,17 +307,12 @@ using namespace std;
 
 #pragma mark - silent model
 - (void)buildSilentViewModel:(UIImage *)image { // 添加图片信息
-    
     if (!_detectItem) {
-        
         _detectItem = [[MGSilentLiveDetectItem alloc] init];
-    
     }
     
-    // 。。。。。。这个到底是什么来着
-    
     self.detectItem = [self.silentManager detectImageIsLiveWithFMP:image];
-    
+    // 好了，必要的信息应该全部返回回来了
     
     NSLog(@" detect result: hasFace:%@ isLive:%@", _detectItem.hasFace ? @"YES" : @"NO", _detectItem.isLive ? @"YES" : @"NO");
 }
