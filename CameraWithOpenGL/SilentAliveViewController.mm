@@ -37,7 +37,8 @@
     self.openGLView = [[SilentActiveView alloc] init];
     [self.view addSubview:self.openGLView];
     [self.openGLView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-200);
     }];
 }
 

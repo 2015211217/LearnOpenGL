@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D004E4061F67CBB3009C235D /* MGSilentLiveDetectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D004E4041F67CBB3009C235D /* MGSilentLiveDetectManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D004E4071F67CBB3009C235D /* MGSilentLiveDetectManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D004E4051F67CBB3009C235D /* MGSilentLiveDetectManager.mm */; };
+		D004E40A1F67CBFA009C235D /* MGSilentLiveDetectItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D004E4081F67CBFA009C235D /* MGSilentLiveDetectItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D004E40B1F67CBFA009C235D /* MGSilentLiveDetectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D004E4091F67CBFA009C235D /* MGSilentLiveDetectItem.m */; };
+		D0F2BDE81F61331A000B91BF /* KASSilentLive.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDE61F61331A000B91BF /* KASSilentLive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F2BE3D1F613447000B91BF /* MegFaceIDConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE1E1F6133C0000B91BF /* MegFaceIDConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F2BE421F613447000B91BF /* MegFaceIDSilentLiveConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE341F6133C0000B91BF /* MegFaceIDSilentLiveConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0F2BE451F613465000B91BF /* libmegcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F2BE011F6133C0000B91BF /* libmegcv.a */; };
+		D0F2BE461F613465000B91BF /* megcv32.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F2BE041F6133C0000B91BF /* megcv32.a */; };
+		D0F2BE4E1F613476000B91BF /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDF91F6133C0000B91BF /* common.h */; };
+		D0F2BE4F1F613476000B91BF /* cvt_color.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFA1F6133C0000B91BF /* cvt_color.h */; };
+		D0F2BE501F613476000B91BF /* enums.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFB1F6133C0000B91BF /* enums.h */; };
+		D0F2BE511F613476000B91BF /* exceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFC1F6133C0000B91BF /* exceptions.h */; };
+		D0F2BE521F613476000B91BF /* filter.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFD1F6133C0000B91BF /* filter.h */; };
+		D0F2BE531F613476000B91BF /* flip.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFE1F6133C0000B91BF /* flip.h */; };
+		D0F2BE541F613476000B91BF /* GaussianBlur.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BDFF1F6133C0000B91BF /* GaussianBlur.h */; };
+		D0F2BE551F613476000B91BF /* get_perspective.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE001F6133C0000B91BF /* get_perspective.h */; };
+		D0F2BE561F613476000B91BF /* linalg.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE021F6133C0000B91BF /* linalg.h */; };
+		D0F2BE571F613476000B91BF /* megcv.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE031F6133C0000B91BF /* megcv.h */; };
+		D0F2BE581F613476000B91BF /* resize.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE051F6133C0000B91BF /* resize.h */; };
+		D0F2BE591F613476000B91BF /* rotate.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE061F6133C0000B91BF /* rotate.h */; };
+		D0F2BE5A1F613476000B91BF /* transpose.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE071F6133C0000B91BF /* transpose.h */; };
+		D0F2BE5B1F613476000B91BF /* warp_affine.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE081F6133C0000B91BF /* warp_affine.h */; };
+		D0F2BE5C1F613476000B91BF /* warp_perspective.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE091F6133C0000B91BF /* warp_perspective.h */; };
+		D0F2BE741F61348B000B91BF /* MGFaceIDFaceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0F2BE301F6133C0000B91BF /* MGFaceIDFaceManager.cpp */; };
+		D0F2BE751F61348B000B91BF /* MGFaceIDFaceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE311F6133C0000B91BF /* MGFaceIDFaceManager.h */; };
+		D0F2BE761F61348B000B91BF /* MegFaceIDFMPLiveManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0F2BE361F6133C0000B91BF /* MegFaceIDFMPLiveManager.cpp */; };
+		D0F2BE771F61348B000B91BF /* MegFaceIDFMPLiveManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE371F6133C0000B91BF /* MegFaceIDFMPLiveManager.h */; };
+		D0F2BE791F61348B000B91BF /* MegFaceIDFMPLiveItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0F2BE3B1F6133C0000B91BF /* MegFaceIDFMPLiveItem.cpp */; };
+		D0F2BE7A1F61348B000B91BF /* MegFaceIDFMPLiveItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F2BE3C1F6133C0000B91BF /* MegFaceIDFMPLiveItem.h */; };
+		EBD9C6EA219597C9004475DA /* libmegface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9C6C6219597C9004475DA /* libmegface.a */; };
+		EBD9C6F7219597DA004475DA /* megface-c in Resources */ = {isa = PBXBuildFile; fileRef = EBD9C6F4219597DA004475DA /* megface-c */; };
+		EBD9C6F8219597DA004475DA /* megcommon-c in Resources */ = {isa = PBXBuildFile; fileRef = EBD9C6F5219597DA004475DA /* megcommon-c */; };
+		EBD9C6F9219597DA004475DA /* meglive-c in Resources */ = {isa = PBXBuildFile; fileRef = EBD9C6F6219597DA004475DA /* meglive-c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D004E4041F67CBB3009C235D /* MGSilentLiveDetectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSilentLiveDetectManager.h; sourceTree = "<group>"; };
+		D004E4051F67CBB3009C235D /* MGSilentLiveDetectManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MGSilentLiveDetectManager.mm; sourceTree = "<group>"; };
+		D004E4081F67CBFA009C235D /* MGSilentLiveDetectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSilentLiveDetectItem.h; sourceTree = "<group>"; };
+		D004E4091F67CBFA009C235D /* MGSilentLiveDetectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSilentLiveDetectItem.m; sourceTree = "<group>"; };
+		D0F2BDE31F61331A000B91BF /* KASSilentLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KASSilentLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F2BDE61F61331A000B91BF /* KASSilentLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KASSilentLive.h; sourceTree = "<group>"; };
+		D0F2BDE71F61331A000B91BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F2BDF91F6133C0000B91BF /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		D0F2BDFA1F6133C0000B91BF /* cvt_color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cvt_color.h; sourceTree = "<group>"; };
+		D0F2BDFB1F6133C0000B91BF /* enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		D0F2BDFC1F6133C0000B91BF /* exceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exceptions.h; sourceTree = "<group>"; };
+		D0F2BDFD1F6133C0000B91BF /* filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filter.h; sourceTree = "<group>"; };
+		D0F2BDFE1F6133C0000B91BF /* flip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = flip.h; sourceTree = "<group>"; };
+		D0F2BDFF1F6133C0000B91BF /* GaussianBlur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaussianBlur.h; sourceTree = "<group>"; };
+		D0F2BE001F6133C0000B91BF /* get_perspective.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get_perspective.h; sourceTree = "<group>"; };
+		D0F2BE011F6133C0000B91BF /* libmegcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmegcv.a; sourceTree = "<group>"; };
+		D0F2BE021F6133C0000B91BF /* linalg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linalg.h; sourceTree = "<group>"; };
+		D0F2BE031F6133C0000B91BF /* megcv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = megcv.h; sourceTree = "<group>"; };
+		D0F2BE041F6133C0000B91BF /* megcv32.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = megcv32.a; sourceTree = "<group>"; };
+		D0F2BE051F6133C0000B91BF /* resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resize.h; sourceTree = "<group>"; };
+		D0F2BE061F6133C0000B91BF /* rotate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rotate.h; sourceTree = "<group>"; };
+		D0F2BE071F6133C0000B91BF /* transpose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transpose.h; sourceTree = "<group>"; };
+		D0F2BE081F6133C0000B91BF /* warp_affine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warp_affine.h; sourceTree = "<group>"; };
+		D0F2BE091F6133C0000B91BF /* warp_perspective.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = warp_perspective.h; sourceTree = "<group>"; };
+		D0F2BE1E1F6133C0000B91BF /* MegFaceIDConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MegFaceIDConfig.h; sourceTree = "<group>"; };
+		D0F2BE301F6133C0000B91BF /* MGFaceIDFaceManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MGFaceIDFaceManager.cpp; sourceTree = "<group>"; };
+		D0F2BE311F6133C0000B91BF /* MGFaceIDFaceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGFaceIDFaceManager.h; sourceTree = "<group>"; };
+		D0F2BE341F6133C0000B91BF /* MegFaceIDSilentLiveConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MegFaceIDSilentLiveConfig.h; sourceTree = "<group>"; };
+		D0F2BE361F6133C0000B91BF /* MegFaceIDFMPLiveManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MegFaceIDFMPLiveManager.cpp; sourceTree = "<group>"; };
+		D0F2BE371F6133C0000B91BF /* MegFaceIDFMPLiveManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MegFaceIDFMPLiveManager.h; sourceTree = "<group>"; };
+		D0F2BE3B1F6133C0000B91BF /* MegFaceIDFMPLiveItem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MegFaceIDFMPLiveItem.cpp; sourceTree = "<group>"; };
+		D0F2BE3C1F6133C0000B91BF /* MegFaceIDFMPLiveItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MegFaceIDFMPLiveItem.h; sourceTree = "<group>"; };
+		EBD9C6C6219597C9004475DA /* libmegface.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmegface.a; sourceTree = "<group>"; };
+		EBD9C6F4219597DA004475DA /* megface-c */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "megface-c"; sourceTree = "<group>"; };
+		EBD9C6F5219597DA004475DA /* megcommon-c */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "megcommon-c"; sourceTree = "<group>"; };
+		EBD9C6F6219597DA004475DA /* meglive-c */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "meglive-c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0F2BDDF1F61331A000B91BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F2BE461F613465000B91BF /* megcv32.a in Frameworks */,
+				D0F2BE451F613465000B91BF /* libmegcv.a in Frameworks */,
+				EBD9C6EA219597C9004475DA /* libmegface.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0F2BDD91F61331A000B91BF = {
+			isa = PBXGroup;
+			children = (
+				D0F2BDE51F61331A000B91BF /* KASSilentLive */,
+				D0F2BDE41F61331A000B91BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0F2BDE41F61331A000B91BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BDE31F61331A000B91BF /* KASSilentLive.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0F2BDE51F61331A000B91BF /* KASSilentLive */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BDE61F61331A000B91BF /* KASSilentLive.h */,
+				D0F2BE1C1F6133C0000B91BF /* Clazz */,
+				D0F2BDEE1F6133C0000B91BF /* SDK */,
+				D0F2BDE71F61331A000B91BF /* Info.plist */,
+			);
+			path = KASSilentLive;
+			sourceTree = "<group>";
+		};
+		D0F2BDEE1F6133C0000B91BF /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				EBD9C6AA219597C9004475DA /* MegFace */,
+				D0F2BDF81F6133C0000B91BF /* MegCV */,
+			);
+			name = SDK;
+			path = src/SDK;
+			sourceTree = "<group>";
+		};
+		D0F2BDF81F6133C0000B91BF /* MegCV */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BDF91F6133C0000B91BF /* common.h */,
+				D0F2BDFA1F6133C0000B91BF /* cvt_color.h */,
+				D0F2BDFB1F6133C0000B91BF /* enums.h */,
+				D0F2BDFC1F6133C0000B91BF /* exceptions.h */,
+				D0F2BDFD1F6133C0000B91BF /* filter.h */,
+				D0F2BDFE1F6133C0000B91BF /* flip.h */,
+				D0F2BDFF1F6133C0000B91BF /* GaussianBlur.h */,
+				D0F2BE001F6133C0000B91BF /* get_perspective.h */,
+				D0F2BE011F6133C0000B91BF /* libmegcv.a */,
+				D0F2BE021F6133C0000B91BF /* linalg.h */,
+				D0F2BE031F6133C0000B91BF /* megcv.h */,
+				D0F2BE041F6133C0000B91BF /* megcv32.a */,
+				D0F2BE051F6133C0000B91BF /* resize.h */,
+				D0F2BE061F6133C0000B91BF /* rotate.h */,
+				D0F2BE071F6133C0000B91BF /* transpose.h */,
+				D0F2BE081F6133C0000B91BF /* warp_affine.h */,
+				D0F2BE091F6133C0000B91BF /* warp_perspective.h */,
+			);
+			path = MegCV;
+			sourceTree = "<group>";
+		};
+		D0F2BE1C1F6133C0000B91BF /* Clazz */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE1D1F6133C0000B91BF /* Config */,
+				D0F2BE2E1F6133C0000B91BF /* MegFace */,
+				D0F2BE321F6133C0000B91BF /* SilentLive */,
+			);
+			name = Clazz;
+			path = src/Clazz;
+			sourceTree = "<group>";
+		};
+		D0F2BE1D1F6133C0000B91BF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE1E1F6133C0000B91BF /* MegFaceIDConfig.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D0F2BE2E1F6133C0000B91BF /* MegFace */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE2F1F6133C0000B91BF /* Manager */,
+			);
+			path = MegFace;
+			sourceTree = "<group>";
+		};
+		D0F2BE2F1F6133C0000B91BF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE301F6133C0000B91BF /* MGFaceIDFaceManager.cpp */,
+				D0F2BE311F6133C0000B91BF /* MGFaceIDFaceManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D0F2BE321F6133C0000B91BF /* SilentLive */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE331F6133C0000B91BF /* Config */,
+				D0F2BE351F6133C0000B91BF /* Manager */,
+				D0F2BE3A1F6133C0000B91BF /* Model */,
+			);
+			path = SilentLive;
+			sourceTree = "<group>";
+		};
+		D0F2BE331F6133C0000B91BF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE341F6133C0000B91BF /* MegFaceIDSilentLiveConfig.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D0F2BE351F6133C0000B91BF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D004E4041F67CBB3009C235D /* MGSilentLiveDetectManager.h */,
+				D004E4051F67CBB3009C235D /* MGSilentLiveDetectManager.mm */,
+				D0F2BE361F6133C0000B91BF /* MegFaceIDFMPLiveManager.cpp */,
+				D0F2BE371F6133C0000B91BF /* MegFaceIDFMPLiveManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D0F2BE3A1F6133C0000B91BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2BE3B1F6133C0000B91BF /* MegFaceIDFMPLiveItem.cpp */,
+				D0F2BE3C1F6133C0000B91BF /* MegFaceIDFMPLiveItem.h */,
+				D004E4081F67CBFA009C235D /* MGSilentLiveDetectItem.h */,
+				D004E4091F67CBFA009C235D /* MGSilentLiveDetectItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBD9C6AA219597C9004475DA /* MegFace */ = {
+			isa = PBXGroup;
+			children = (
+				EBD9C6F5219597DA004475DA /* megcommon-c */,
+				EBD9C6F4219597DA004475DA /* megface-c */,
+				EBD9C6F6219597DA004475DA /* meglive-c */,
+				EBD9C6C6219597C9004475DA /* libmegface.a */,
+			);
+			path = MegFace;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D0F2BDE01F61331A000B91BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F2BE771F61348B000B91BF /* MegFaceIDFMPLiveManager.h in Headers */,
+				D0F2BE751F61348B000B91BF /* MGFaceIDFaceManager.h in Headers */,
+				D0F2BE5A1F613476000B91BF /* transpose.h in Headers */,
+				D0F2BE3D1F613447000B91BF /* MegFaceIDConfig.h in Headers */,
+				D0F2BE591F613476000B91BF /* rotate.h in Headers */,
+				D0F2BE501F613476000B91BF /* enums.h in Headers */,
+				D0F2BE541F613476000B91BF /* GaussianBlur.h in Headers */,
+				D0F2BE561F613476000B91BF /* linalg.h in Headers */,
+				D0F2BE421F613447000B91BF /* MegFaceIDSilentLiveConfig.h in Headers */,
+				D0F2BE571F613476000B91BF /* megcv.h in Headers */,
+				D0F2BE5B1F613476000B91BF /* warp_affine.h in Headers */,
+				D0F2BE5C1F613476000B91BF /* warp_perspective.h in Headers */,
+				D0F2BE581F613476000B91BF /* resize.h in Headers */,
+				D0F2BE521F613476000B91BF /* filter.h in Headers */,
+				D0F2BE4E1F613476000B91BF /* common.h in Headers */,
+				D0F2BE7A1F61348B000B91BF /* MegFaceIDFMPLiveItem.h in Headers */,
+				D0F2BDE81F61331A000B91BF /* KASSilentLive.h in Headers */,
+				D0F2BE551F613476000B91BF /* get_perspective.h in Headers */,
+				D0F2BE531F613476000B91BF /* flip.h in Headers */,
+				D0F2BE511F613476000B91BF /* exceptions.h in Headers */,
+				D004E4061F67CBB3009C235D /* MGSilentLiveDetectManager.h in Headers */,
+				D004E40A1F67CBFA009C235D /* MGSilentLiveDetectItem.h in Headers */,
+				D0F2BE4F1F613476000B91BF /* cvt_color.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D0F2BDE21F61331A000B91BF /* KASSilentLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0F2BDEB1F61331A000B91BF /* Build configuration list for PBXNativeTarget "KASSilentLive" */;
+			buildPhases = (
+				D0F2BDDE1F61331A000B91BF /* Sources */,
+				D0F2BDDF1F61331A000B91BF /* Frameworks */,
+				D0F2BDE01F61331A000B91BF /* Headers */,
+				D0F2BDE11F61331A000B91BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KASSilentLive;
+			productName = KASSilentLive;
+			productReference = D0F2BDE31F61331A000B91BF /* KASSilentLive.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0F2BDDA1F61331A000B91BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = megvii;
+				TargetAttributes = {
+					D0F2BDE21F61331A000B91BF = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = D0F2BDDD1F61331A000B91BF /* Build configuration list for PBXProject "KASSilentLive" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0F2BDD91F61331A000B91BF;
+			productRefGroup = D0F2BDE41F61331A000B91BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0F2BDE21F61331A000B91BF /* KASSilentLive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0F2BDE11F61331A000B91BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD9C6F9219597DA004475DA /* meglive-c in Resources */,
+				EBD9C6F7219597DA004475DA /* megface-c in Resources */,
+				EBD9C6F8219597DA004475DA /* megcommon-c in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0F2BDDE1F61331A000B91BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F2BE791F61348B000B91BF /* MegFaceIDFMPLiveItem.cpp in Sources */,
+				D004E4071F67CBB3009C235D /* MGSilentLiveDetectManager.mm in Sources */,
+				D0F2BE741F61348B000B91BF /* MGFaceIDFaceManager.cpp in Sources */,
+				D004E40B1F67CBFA009C235D /* MGSilentLiveDetectItem.m in Sources */,
+				D0F2BE761F61348B000B91BF /* MegFaceIDFMPLiveManager.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D0F2BDE91F61331A000B91BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D0F2BDEA1F61331A000B91BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D0F2BDEC1F61331A000B91BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/KASSilentLive/src/SDK/MegFace\"";
+				INFOPLIST_FILE = KASSilentLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/General",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MegCV",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MGActionLive",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MegFace",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.megvii.KASSilentLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0F2BDED1F61331A000B91BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/KASSilentLive/src/SDK/MegFace\"";
+				INFOPLIST_FILE = KASSilentLive/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/General",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MegCV",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MGActionLive",
+					"$(PROJECT_DIR)/KASSilentLive/src/SDK/MegFace",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.megvii.KASSilentLive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0F2BDDD1F61331A000B91BF /* Build configuration list for PBXProject "KASSilentLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F2BDE91F61331A000B91BF /* Debug */,
+				D0F2BDEA1F61331A000B91BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0F2BDEB1F61331A000B91BF /* Build configuration list for PBXNativeTarget "KASSilentLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F2BDEC1F61331A000B91BF /* Debug */,
+				D0F2BDED1F61331A000B91BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0F2BDDA1F61331A000B91BF /* Project object */;
+}

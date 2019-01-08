@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../Desktop/&#x4ea4;&#x4ed8;FMP 2/sdk/KASSilentLive/KASSilentLive/src/Clazz/SilentLive/Manager/MegFaceIDFMPLiveManager.cpp"
-            timestampString = "567675922.774559"
+            timestampString = "568202647.69437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110">
+            startingLineNumber = "105"
+            endingLineNumber = "105">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -151,6 +151,16 @@
             endingLineNumber = "70"
             landmarkName = "detect_face_landmark(const void* face_image, MegFaceIDImageType image_type, int image_width, int image_height)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

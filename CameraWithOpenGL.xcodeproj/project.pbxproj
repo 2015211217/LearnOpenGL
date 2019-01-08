@@ -266,10 +266,10 @@
 				993AA55721D384A000D8961A /* Meg_Face */,
 				993AA55821D384A000D8961A /* Meg_FaceRect */,
 				993AA55921D384A000D8961A /* Meg_FMPLive */,
-				99C98E8021C356E5002909CA /* GLProgram.h */,
-				99C98E8121C356E5002909CA /* GLProgram.m */,
 				9928E87B21C7442D007DF6FA /* shaderf.fsh */,
 				9928E87C21C7442D007DF6FA /* shaderv.vsh */,
+				99C98E8021C356E5002909CA /* GLProgram.h */,
+				99C98E8121C356E5002909CA /* GLProgram.m */,
 			);
 			path = Extends;
 			sourceTree = "<group>";

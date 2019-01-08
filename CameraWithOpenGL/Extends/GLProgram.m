@@ -1,7 +1,7 @@
 //  This is Jeff LaMarche's GLProgram OpenGL shader wrapper class from his OpenGL ES 2.0 book.
 //  A description of this can be found at his page on the topic:
 //  http://iphonedevelopment.blogspot.com/2010/11/opengl-es-20-for-ios-chapter-4.html
-
+//  所以其实本质上还是和之前看到的一样，只不过这里为了方便把部分代码提取出来了
 
 #import "GLProgram.h"
 // START:typedefs
@@ -64,11 +64,10 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
 {
     NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
     NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
-    
-    if ((self = [self initWithVertexShaderString:vShaderString fragmentShaderString:fragmentShaderString]))
-    {
+    if ((self = [self initWithVertexShaderString:vShaderString fragmentShaderString:fragmentShaderString])) {
+        
+        
     }
-    
     return self;
 }
 
@@ -77,7 +76,6 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
 {
     NSString *vertShaderPathname = [[NSBundle mainBundle] pathForResource:vShaderFilename ofType:@"vsh"];
     NSString *vertexShaderString = [NSString stringWithContentsOfFile:vertShaderPathname encoding:NSUTF8StringEncoding error:nil];
-    
     NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
     NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
     
@@ -88,20 +86,19 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
     return self;
 }
 // END:init
+
 // START:compile
 - (BOOL)compileShader:(GLuint *)shader
                  type:(GLenum)type
                string:(NSString *)shaderString
 {
     //    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
-    
     GLint status;
     const GLchar *source;
     
     source =
     (GLchar *)[shaderString UTF8String];
-    if (!source)
-    {
+    if (!source) {
         NSLog(@"Failed to load vertex shader");
         return NO;
     }
@@ -109,19 +106,15 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
     *shader = glCreateShader(type);
     glShaderSource(*shader, 1, &source, NULL);
     glCompileShader(*shader);
-    
     glGetShaderiv(*shader, GL_COMPILE_STATUS, &status);
     
-    if (status != GL_TRUE)
-    {
+    if (status != GL_TRUE) {
         GLint logLength;
         glGetShaderiv(*shader, GL_INFO_LOG_LENGTH, &logLength);
-        if (logLength > 0)
-        {
+        if (logLength > 0) {
             GLchar *log = (GLchar *)malloc(logLength);
             glGetShaderInfoLog(*shader, logLength, &logLength, log);
-            if (shader == &vertShader)
-            {
+            if (shader == &vertShader) {
                 self.vertexShaderLog = [NSString stringWithFormat:@"%s", log];
             }
             else
@@ -152,11 +145,13 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
     }
 }
 // END:addattribute
+
 // START:indexmethods
 - (GLuint)attributeIndex:(NSString *)attributeName
 {
     return (GLuint)[attributes indexOfObject:attributeName];
 }
+
 - (GLuint)uniformIndex:(NSString *)uniformName
 {
     return glGetUniformLocation(program, [uniformName UTF8String]);
@@ -167,13 +162,9 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
 - (BOOL)link
 {
     //    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
-    
     GLint status;
-    
     glLinkProgram(program);
-    
     glGetProgramiv(program, GL_LINK_STATUS, &status);
-    
     if (status == GL_FALSE)
         return NO;
     
@@ -196,12 +187,14 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
     return YES;
 }
 // END:link
+
 // START:use
 - (void)use
 {
     glUseProgram(program);
 }
 // END:use
+
 #pragma mark -
 
 - (void)validate;
@@ -231,7 +224,6 @@ typedef void (*GLLogFunction)(GLuint program, GLsizei bufsize, GLsizei* length, 
     
     if (program)
         glDeleteProgram(program);
-    
 }
 // END:dealloc
 @end

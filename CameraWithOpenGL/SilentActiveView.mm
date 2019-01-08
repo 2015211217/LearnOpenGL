@@ -3,10 +3,6 @@
 #import "MGCameraManager.h"
 #import <OpenGLES/ES2/gl.h>
 #include <KASSilentLive/KASSilentLive.h>
-//#include "MGFaceIDFaceManager.h"
-
-// 我似乎只能够使用framework里面有的头文件，就相当于添加了一个framework
-// 所以这个C++到底是怎么弄的鸭。
 
 using namespace std;
 
@@ -63,14 +59,16 @@ using namespace std;
 }
 
 - (void)setupProgram {
-    CGFloat scale = [[UIScreen mainScreen] scale]; //获取视图放大倍数，可以把scale设置为1试试
+    CGFloat scale = [[UIScreen mainScreen] scale]; //获取视图放大倍数
     glViewport(self.frame.origin.x * scale, self.frame.origin.y * scale, self.frame.size.width * scale, self.frame.size.height * scale); //设置视口大小
+    
     //读取文件路径
     NSString *vertFile = [[NSBundle mainBundle] pathForResource:@"shaderv" ofType:@"vsh"];
     NSString *fragFile = [[NSBundle mainBundle] pathForResource:@"shaderf" ofType:@"fsh"];
 
     //加载shader,顶点着色器和片段着色器
     self.program = [[GLProgram alloc] initWithVertexShaderString:[NSString stringWithContentsOfFile:vertFile encoding:NSUTF8StringEncoding error:nil] fragmentShaderString:[NSString stringWithContentsOfFile:fragFile encoding:NSUTF8StringEncoding error:nil]];
+    
     //链接
     if (!self.program.initialized)
     {
@@ -99,9 +97,9 @@ using namespace std;
     glEnableVertexAttribArray(displayTextureCoordinateAttribute);
 
     GLfloat attrArr[] = {
-        1.0f, -0.5f, -1.0f,     1.0f, 0.0f,
+        1.0f, -1.0f, -1.0f,     1.0f, 0.0f,
         -1.0f, 1.0f, -1.0f,     0.0f, 1.0f,
-        -1.0f, -0.5f, -1.0f,    0.0f, 0.0f,
+        -1.0f, -1.0f, -1.0f,    0.0f, 0.0f,
         1.0f, 1.0f, -1.0f,      1.0f, 1.0f,
     };
     GLuint attrIndex[] = {
@@ -124,23 +122,15 @@ using namespace std;
     glEnableVertexAttribArray(displayTextureCoordinateAttribute);
     
     [self setupTexture:[UIImage imageNamed:@"doge"].CGImage texture:_myTexture0];
-    [self setupTexture:[UIImage imageNamed:@"aFei1"].CGImage texture:_myTexture1];
-    
-    glActiveTexture(GL_TEXTURE1);
+    glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, self.myTexture0);
     glUniform1i(self.texture0Uniform, 0);
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, self.myTexture1);
-    glUniform1i(self.texture1Uniform, 1);
-    glUniform2f(self.leftBottomUniform, -0.15, -0.15);
-    glUniform2f(self.rightTopUniform, 0.30, 0.30);
 
     if (!_silentManager) {
         NSData *faceModel = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Meg_Face"
                                                                                            ofType:nil]];
         NSData *fmpModel = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Meg_FMPLive"
                                                                                           ofType:nil]];
-        
         _silentManager = [[MGSilentLiveDetectManager alloc] initWithFaceModel:faceModel fmpModel:fmpModel];
         if (_silentManager) {
             NSLog(@"加载成功");
@@ -148,7 +138,6 @@ using namespace std;
             NSLog(@"加载失败");
         }
     }
-
     [self startCameraManager];
 }
 
@@ -277,12 +266,11 @@ using namespace std;
 #pragma mark - texture
 - (GLuint)setupTexture:(CGImageRef)spriteImage texture:(GLuint)texture {
     // 1获取图片的CGImageRef
-//    CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
     if (!spriteImage) {
         NSLog(@"No Image to show.");
         exit(1);
     }
-//    // 读取图片的大小
+    // 读取图片的大小
     size_t width = CGImageGetWidth(spriteImage);
     size_t height = CGImageGetHeight(spriteImage);
     GLubyte *spriteData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte)); //rgba共4个byte
@@ -301,7 +289,6 @@ using namespace std;
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
     free(spriteData);
     return 0;
-    
 }
 
 
@@ -310,11 +297,20 @@ using namespace std;
     if (!_detectItem) {
         _detectItem = [[MGSilentLiveDetectItem alloc] init];
     }
-    
     self.detectItem = [self.silentManager detectImageIsLiveWithFMP:image];
     // 好了，必要的信息应该全部返回回来了
-    
-    NSLog(@" detect result: hasFace:%@ isLive:%@", _detectItem.hasFace ? @"YES" : @"NO", _detectItem.isLive ? @"YES" : @"NO");
+    if (_detectItem.hasFace) {
+        NSLog(@"%d %d %d %d", self.detectItem.left, self.detectItem.right, self.detectItem.top, self.detectItem.bottom);
+        // 好了，开始画框吧
+        
+        //    [self setupTexture:[UIImage imageNamed:@"aFei1"].CGImage texture:_myTexture1];
+        //    glActiveTexture(GL_TEXTURE1);
+        //    glBindTexture(GL_TEXTURE_2D, self.myTexture1);
+        //    glUniform1i(self.texture1Uniform, 1);
+        //    glUniform2f(self.leftBottomUniform, -0.15, -0.15);
+        //    glUniform2f(self.rightTopUniform, 0.30, 0.30);
+        
+    }
 }
 
 @end
